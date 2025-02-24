@@ -160,6 +160,12 @@ function showExplanation(explanation) {
     explanationText.innerText = explanation;
     explanationBanner.style.display = 'block';
     overlay.style.display = 'block';
+    
+    // ✅ Abilita il pulsante "Continua" quando compare la spiegazione
+    const continueButton = document.getElementById('continue-button');
+    if (continueButton) {
+        continueButton.disabled = false; // Rimuove l'attributo "disabled"
+    }
 }
 
 // Continue to Next Question
@@ -168,7 +174,14 @@ function continueToNextQuestion() {
     overlay.style.display = 'none';
     currentQuestionIndex++;
     currentQuestionIndex < questions.length ? showQuestion() : showResults();
+
+    // ✅ Disabilita di nuovo il pulsante dopo averlo premuto
+    const continueButton = document.getElementById('continue-button');
+    if (continueButton) {
+        continueButton.disabled = true; // Previene clic multipli
+    }
 }
+
 
 // Append Feedback
 function appendFeedback(message, isCorrect) {
