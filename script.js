@@ -18,7 +18,7 @@ const questions = [
             { text: "Pipistrello della tequila (Pipistrello)", correct: true },
             { text: "Tucano toco (Uccello)", correct: false }
         ],
-        image: "images/elements.png"
+        image: "images/butterfly.png"
     },
     {
         question: "Gli impollinatori si trovano davvero quasi ovunque! Dove non sono mai stati visti?",
