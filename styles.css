@@ -8,86 +8,10 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-body {
-    background-color: #000;
-    color: #00ff00;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     text-align: center;
-    padding: 10px;
-    background-image: linear-gradient(
-        to bottom,
-        #ffecb3,
-       #c5e1a5,
-        #81d4fa);
-    color: #4e342e;
-    text-align: center;
-    
-    /* Flexbox for general layout */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure the body occupies at least the viewport height */
-}
-
-/* Retro Starfield Background Animation */
-@keyframes starfield {
-    from { background-position: 0 0; }
-    to { background-position: -10000px 5000px; }
-}
-
-/* Flicker Animation */
-@keyframes flicker {
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 1;
-    }
-    20%, 22%, 24%, 55% {
-        opacity: 0.4;
-    }
-}
-
-/* Blink Animation */
-@keyframes blink {
-    0%, 50%, 100% {
-        opacity: 1;
-    }
-    25%, 75% {
-        opacity: 0;
-    }
-}
-
-/* Apply animated starfield background to body */
-body::before {
-    content: '';
-    position: fixed; /* Fixed relative to the viewport */
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background: url('images/starfield.png') repeat;
-    opacity: 0.10; /* Adjust opacity so it doesn't overpower content */
-    animation: starfield 200s linear infinite; /* Duration and repetition of animation */
-    pointer-events: none; /* Allow clicks to pass through */
-    z-index: -1; /* Position background behind other elements */
-}
-
-/* General scanlines effect */
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: repeating-linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.05),
-        rgba(255, 255, 255, 0.05) 1px,
-        transparent 1px,
-        transparent 3px
-    );
-    pointer-events: none;
-    z-index: 0; /* Above the ::before starfield */
+    background: linear-gradient(to bottom, #fff9c4, #c8e6c9, #b3e5fc);
+    color: #3e2723;
 }
 
 /* Game Container Styling */
@@ -96,45 +20,40 @@ body::after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 1; /* Allow the container to expand */
+    flex: 1;
     max-width: 800px;
     width: 100%;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
-    border: 4px solid #00ff00;
-    background: rgba(0, 0, 0, 0.7);
-    position: relative;
+    border: 4px solid #8bc34a;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
 }
 
 /* Title Styling */
 h1 {
-    font-size: 42px;
-    color: #d32f2f;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px #ffca28; /* Yellow shadow */
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #ffa000;
+    border: 4px double #8bc34a;
     padding: 10px;
-    display: inline-block;
-    border-bottom: 4px solid #8bc34a;
-    animation: fadeIn 1.5s ease; /* Flicker animation */
+    text-shadow: 2px 2px #ffd54f;
 }
 
 /* Button Styling */
 .button {
     background-color: #8bc34a;
     color: #ffffff;
-    padding: 15px 25px;
+    padding: 15px 20px;
     border: none;
-    cursor: pointer;
+    border-radius: 12px;
     font-size: 18px;
+    cursor: pointer;
     width: 90%;
     max-width: 400px;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+    margin: 10px auto;
     transition: background-color 0.3s, transform 0.2s;
-    white-space: normal; /* Allow text to wrap */
-    word-wrap: break-word; /* Break long words if necessary */
-    overflow-wrap: break-word; /* Handle long words */
-    animation: flicker 3.5s infinite; /* Flicker animation */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
@@ -142,239 +61,86 @@ h1 {
     transform: scale(1.05);
 }
 
-/* Image Styling within the Game */
+/* Image Styling */
 #game img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 30px;
-    border: 4px solid #00ff00;
-    box-shadow: 2px 2px #ff00ff;
-    image-rendering: pixelated; /* Maintain pixelated look */
-}
-
-/* Initial Screen Image Styling */
-.schermata-iniziale {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 30px;
-    border: 4px solid #00ff00;
-    box-shadow: 2px 2px #ff00ff;
-    position: relative;
-}
-
-/* Scanlines Effect for Initial Screen Image */
-.schermata-iniziale::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: repeating-linear-gradient(
-        to bottom,
-        transparent,
-        transparent 3px,
-        rgba(0, 0, 0, 0.2) 3px,
-        rgba(0, 0, 0, 0.2) 4px
-    );
-    pointer-events: none;
-}
-
-/* Coin Image Styling */
-#insert-coin {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.coin-image {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 10px;
-    animation: blink 2s infinite;
+    border: 4px solid #8bc34a;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Progress Bar Styling */
 #progress-container {
-    width: 80%;
-    background-color: #e0e0e0;
-    margin: 20px 0;
+    width: 100%;
+    background-color: #eeeeee;
     border-radius: 10px;
     overflow: hidden;
+    margin: 20px 0;
 }
 
 #progress-bar {
     width: 0%;
-    height: 100%;
-    background-color: #ffb300;
-    border-radius: 10px; /* Rounded edges for a vintage look */
+    height: 20px;
+    background-color: #ffa000;
     transition: width 0.5s ease;
-}
-
-/* Score Display Styling */
-#score-display {
-    font-size: 18px;
-    color: #00ff00;
-    text-shadow: 1px 1px #000000;
-    margin-top: 10px;
 }
 
 /* Feedback Styling */
 .feedback {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 20px 0;
+    font-size: 20px;
+    margin-top: 20px;
+    color: #3e2723;
     padding: 10px;
     border-radius: 8px;
 }
 
 .feedback.correct {
     color: #388e3c;
-    background: #ffcdd2;
+    background: #c8e6c9;
 }
 
 .feedback.incorrect {
-    color: #ff0000;
-}
-
-/* Remove outline from buttons when focused */
-.button:focus {
-    outline: none;
+    color: #d32f2f;
+    background: #ffcdd2;
 }
 
 /* Modal Styling */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-content {
-    background-color: #1a1a1a;
-    margin: auto; /* 15% from the top and centered */
+    background: #ffffff;
     padding: 20px;
-    border: 2px solid #00ff00;
-    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 12px;
+    border: 3px solid #8bc34a;
+    width: 80%;
     max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     text-align: center;
-    position: relative;
-    animation: fadeIn 0.5s ease;
 }
 
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: #fff;
-    text-decoration: none;
-}
-
-.modal-image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-    border: 2px solid #00ff00; /* Green border to match theme */
-    border-radius: 5px; /* Slightly rounded corners */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-}
-
-.modal-text {
-    font-size: 18px;
-    color: #ffffff; /* White text for contrast */
-    text-shadow: 1px 1px #000000;
-}
-/* Fade-In Animation */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* --- Prevent Background Scroll When Modal is Open --- */
-body.modal-open {
-    overflow: hidden;
-}
-
-/* Responsive Design for Screens with Maximum Width of 600px */
+/* Responsive Design */
 @media (max-width: 600px) {
     h1 {
         font-size: 24px;
     }
 
-    #game p {
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
-
     .button {
-        font-size: 14px;
-        padding: 10px 5px;
-        margin: 10px auto;
-        width: 90%;
-    }
-
-    .game-container {
-        padding: 10px;
-        border-width: 2px;
-    }
-
-    /* Adjust Initial Screen Image for Mobile Devices */
-    .schermata-iniziale {
-        margin-bottom: 20px;
-        border-width: 2px;
-    }
-
-    .feedback {
         font-size: 16px;
-    }
-
-    #game h2 {
-        font-size: 22px;
-    }
-
-    /* Adjust Progress Bar for Mobile Devices */
-    #progress-container {
-        margin: 10px 0;
-        height: 15px;
-        border-width: 1px;
-    }
-
-    #progress-bar {
-        height: 100%;
-    }
-
-    /* Adjust Coin Image for Mobile Devices */
-    .coin-image {
-        max-width: 100px;
-    }
-
-    .insert-coin-text {
-        font-size: 16px;
-    }
-
-    #score-display {
-        font-size: 16px;
+        padding: 10px 15px;
     }
 }
 
-/* Flicker Animation for Title */
-h1 {
-    animation: flicker 5.5s infinite;
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
