@@ -3,106 +3,119 @@
 // 1. Game Questions
 const questions = [
     {
-        question: "You are a young planet forming in the habitable zone. What do you do first?",
+        question: "Tutti conosciamo la famosa ape da miele, ma quante specie di api ci sono in Italia secondo te?",
         options: [
-            { text: "Create an ocean", correct: false },
-            { text: "Create an atmosphere", correct: true }
+            { text: "Circa 50", correct: false },
+            { text: "Circa 250", correct: true },
+            { text: "Più di 1000", correct: true }
         ],
         image: "images/planet.png"
     },
     {
-        question: "You have created an atmosphere and then an ocean. Which chemical elements are mostly required on lands and waters?",
+        question: "Quale tra questi animali non è un impollinatore?",
         options: [
-            { text: "Ca, K, Sc, As, Au", correct: false },
-            { text: "C, N, O, P, S, H", correct: true }
+            { text: "Macaone (Farfalla)", correct: false },
+            { text: "Pipistrello della tequila (Pipistrello)", correct: true },
+            { text: "Picchio rosso (Uccello)", correct: true }
         ],
         image: "images/elements.png"
     },
     {
-        question: "Now the source of energy! Which is the main energy source that you need in order to originate life?",
+        question: "Gli impollinatori si trovano davvero quasi ovunque! Dove non sono mai stati visti?",
         options: [
-            { text: "Geothermal gradient", correct: true },
-            { text: "Solar energy", correct: false }
+            { text: "Nel deserto", correct: true },
+            { text: "Nello spazio", correct: false },
+              { text: "Sull'Everest", correct: false }
         ],
         image: "images/energy.png"
     },
     {
-        question: "Now you have a stable atmosphere, geothermal gradients and so on. What do you need next?",
+        question: "Alcuni impollinatori possono compiere viaggi incredibili! Quanti chilometri può percorrere la farfalla monarca durante le sue migrazioni?",
         options: [
-            { text: "Solid rocks", correct: false },
-            { text: "Porous rocks", correct: true }
+            { text: "50 km", correct: false },
+            { text: "1000 km", correct: true },
+            { text: "4500 km", correct: true }
         ],
         image: "images/molecole.png"
     },
     {
-        question: "The main ingredients are ready! Which conditions are probably the best for the formation of prebiotic molecules?",
+        question: "Che percentuale del cibo che mangiamo dipende dall’impollinazione animale?",
         options: [
-            { text: "Warm water, moderate UV radiation", correct: true },
-            { text: "Cold water, high UV radiation", correct: false }
+            { text: "25 %", correct: true },
+            { text: "45 %", correct: false },
+            { text: "75 %", correct: false }
         ],
         image: "images/fumarole.png"
     },
     {
-        question: "The conditions are perfect (maybe)! Now we need the first molecule able to replicate with a degree of information. Which is...",
+        question: "Che percentuale di piante dipende almeno in parte dall’impollinazione mediata da animali?",
         options: [
-            { text: "Protein", correct: false },
-            { text: "DNA/RNA", correct: true }
+            { text: "20 %", correct: false },
+            { text: "50 %", correct: true },
+            { text: "90 %", correct: true }
         ],
         image: "images/dna.png"
     },
     {
-        question: "Molecules, energy, warm waters. The primordial soup! Now macromolecules are inside pores of rocks, we need something more biotic to confine them.",
+        question: "Quale di questi alimenti non sarebbe più disponibile se gli impollinatori sparissero?",
         options: [
-            { text: "We produce vitamins", correct: false },
-            { text: "We produce lipids", correct: true }
+            { text: "Caffè", correct: false },
+            { text: "Grano", correct: true },
+            { text: "Carote", correct: true }
         ],
         image: "images/primordial_soup.png"
     },
     {
-        question: "I need something more..",
+        question: "Quale è uno dei principali rischi per gli impollinatori?",
         options: [
-            { text: "U, Th, Xe, Ar, Sb", correct: false },
-            { text: "Fe, Mo, Cu, Ni, W", correct: true }
+            { text: "Traffico stradale", correct: false },
+            { text: "Pesticidi", correct: true },
+            { text: "Ragnatele", correct: true }
         ],
         image: "images/miller_urey.png"
     },
     {
-        question: "I forgot something probably fundamental!",
+        question: "Di cosa si nutrono principalmente gli impollinatori?",
         options: [
-            { text: "Strong magnetic field", correct: true },
-            { text: "Weak magnetic field", correct: false }
+            { text: "Polline e nettare", correct: true },
+            { text: "Foglie", correct: false },
+            { text: "Insetti", correct: false }
         ],
         image: "images/nucleotides.png"
     },
     {
-        question: "What can help me to keep me warm?",
+        question: "Da cosa è composto principalmente il nettare?",
         options: [
-            { text: "Presence of deeply shadowed cavities", correct: false },
-            { text: "Albedo effect", correct: true }
+            { text: "Zuccheri", correct: false },
+            { text: "Proteine", correct: true },
+            { text: "Vitamine", correct: true }
         ],
         image: "images/rna.png"
     },
     {
-        question: "On the bottom of my oceans something is mixing chemicals with the water! What is it?",
+        question: "Ora che abbiamo verificato la nostra conoscenza degli impollinatori è ora di trovare delle soluzioni per aiutarli. Gli impollinatori stanno morendo di caldo in città, devi trovare una soluzione",
         options: [
-            { text: "A big magmatic cauldron!", correct: false },
-            { text: "Oh! A Hydrothermal Vent!", correct: true }
+            { text: "Crea zone alberate", correct: false },
+            { text: "Spruzza acqua sulle strade", correct: true },
+            { text: "Aggiungi cemento per ridurre le piante infestanti", correct: true }
         ],
         image: "images/hydrothermal_vent.png"
     },
     {
-        question: "In my primordial phase, which gases do I need to host life?",
+        question: "Ora che le temperature sono migliorate, gli impollinatori faticano comunque a trasferirsi in città. Come puoi rendere l’ambiente più accogliente?",
         options: [
-            { text: "Oxygen and Noble Gases", correct: false },
-            { text: "Methane, Ammonia, and Hydrogen Sulfide", correct: true }
+            { text: "Tagliare il prato ogni settimana", correct: false },
+            { text: "Coltivare piante aromatiche sul balcone", correct: true },
+            { text: "Aumentare l'illuminazione notturna per attirare più insetti", correct: true }
         ],
         image: "images/abiogenesis.png"
     },
     {
-        question: "I think that I'm almost ready for life. Which life can I choose first?",
+        question: "In ambiente agricolo gli impollinatori stanno diminuendo e i contadini perdono produzione. Cosa si può fare per aiutarli?",
         options: [
-            { text: "Eukaryotes", correct: false },
-            { text: "Prokaryotes", correct: true }
+            { text: "Circondare i campi coltivati con fiori selvatici", correct: false },
+            { text: "Usare diserbanti per eliminare le erbacce", correct: true },
+            { text: "Arare il terreno più spesso per evitare la cescita spontanea di piante", correct: true }
         ],
         image: "images/rna_world.png"
     },
