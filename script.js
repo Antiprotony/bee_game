@@ -232,7 +232,7 @@ if (continueButton) {
 // Music Toggle
 toggleMusicButton.addEventListener('click', () => {
     if (backgroundMusic.paused) {
-        backgroundMusic.play();
+        backgroundMusic.play().catch(err => console.error("Playback failed: ", err));
         toggleMusicButton.innerText = "🔊 Disattiva Musica";
     } else {
         backgroundMusic.pause();
