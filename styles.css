@@ -25,6 +25,7 @@ body::before {
     opacity: 0.7;
     z-index: -1;
     animation: backgroundMove 60s linear infinite;
+    will-change: transform;
 }
 
 @keyframes backgroundMove {
@@ -34,6 +35,11 @@ body::before {
     to {
         transform: translateX(-50%);
     }
+}
+
+body:hover::before {
+    transform: scale(1.05);
+    transition: transform 1s ease-in-out;
 }
 
 /* Game Container Styling */
@@ -51,6 +57,7 @@ body::before {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.5s ease-out;
 }
 
 /* Title Styling */
@@ -62,6 +69,7 @@ h1 {
     border: 5px double #43a047;
     padding: 12px;
     letter-spacing: 2px;
+    animation: fadeIn 1.5s ease-out;
 }
 
 /* Button Styling */
@@ -77,12 +85,24 @@ h1 {
     width: 90%;
     max-width: 420px;
     margin: 12px auto;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
     background-color: #fb8c00;
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(-3deg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#start-button {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 /* Image Styling */
@@ -92,6 +112,12 @@ h1 {
     border: 5px solid #43a047;
     border-radius: 12px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#game img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #43a047;
 }
 
 /* Progress Bar Styling */
@@ -167,6 +193,6 @@ h1 {
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
