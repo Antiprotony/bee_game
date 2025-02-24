@@ -19,6 +19,7 @@ const questions = [
             { text: "Pipistrello della Tequila", correct: false },
             { text: "Tucano Tuco", correct: true }
         ],
+        explanation: "In Italia...",
         image: "images/butterfly.png"
     },
     {
@@ -28,6 +29,7 @@ const questions = [
             { text: "Nello spazio", correct: false },
             { text: "Sulla cima dell'Everest", correct: true }
         ],
+        explanation: "In Italia...",
         image: "images/space.png"
     },
     {
@@ -37,6 +39,7 @@ const questions = [
             { text: "1000 km", correct: false },
             { text: "4500 km", correct: true }
         ],
+        explanation: "In Italia...",
         image: "images/monarca.png"
     },
     {
@@ -46,6 +49,7 @@ const questions = [
             { text: "Grano", correct: true },
             { text: "Carote", correct: false }
         ],
+        explanation: "In Italia...",
         image: "images/cafe.png"
     },
     {
@@ -55,6 +59,7 @@ const questions = [
             { text: "Irrigare frequentemente i giardini e aree verdi", correct: false },
             { text: "Spruzzare acqua nebulizzata nelle strade per rinfrescare l’ambiente", correct: false }
         ],
+        explanation: "In Italia...",
         image: "images/sole.png"
     },
     {
@@ -64,6 +69,7 @@ const questions = [
             { text: "Coltivando piante aromatiche sul balcone", correct: true },
             { text: "Aumentando l'illuminazione notturna per attirare più insetti", correct: false }
         ],
+        explanation: "In Italia...",
         image: "images/balcone.png"
     },
     {
@@ -73,6 +79,7 @@ const questions = [
             { text: "• Rimuovendo tronchi e ceppi di alberi da terra", correct: false },
             { text: "Sostituendo recinzioni metalliche con siepi", correct: true }
         ],
+        explanation: "In Italia...",
         image: "images/cappo.png"
     },
     {
@@ -82,6 +89,7 @@ const questions = [
             { text: "Suolo nudo", correct: false },
             { text: "Entrambe le risposte precedenti", correct: true }
         ],
+        explanation: "In Italia...",
         image: "images/casetta.png"
     },
     {
@@ -91,268 +99,109 @@ const questions = [
             { text: "• Piantare alberi sempreverdi per mantenere il verde tutto l'anno", correct: false },
            { text: "Importare fiori particolarmente ricchi di nettare da altri paesi", correct: false }
         ],
+        explanation: "In Italia...",
         image: "images/mappa.png"
     }
     
     // Puoi aggiungere altre domande qui se lo desideri
 ];
 
-// 2. Variables to Keep Track of Game State
-let score = 0; // Variable to track the score
-let currentQuestionIndex = 0; // Index of the current question
+// Variables
+let score = 0;
+let currentQuestionIndex = 0;
 
-// 3. Get References to HTML Elements
 const backgroundMusic = document.getElementById('background-music');
 const startButton = document.getElementById('start-button');
 const gameDiv = document.getElementById('game');
-
-// ✅ Aggiunta delle nuove variabili per il banner
 const explanationBanner = document.getElementById('explanation-banner');
 const explanationText = document.getElementById('explanation-text');
 const overlay = document.getElementById('overlay');
 
-// 4. Function to Start the Game
+// Start Game
 function startGame() {
-    // Play background music
     backgroundMusic.play();
-
-    // Hide the Start Game button
     startButton.style.display = 'none';
-
-    // Hide the "Insert Coin" image
     const insertCoin = document.getElementById('insert-coin');
-    if (insertCoin) {
-        insertCoin.style.display = 'none';
-    }
-
-    // Show the progress bar
+    if (insertCoin) insertCoin.style.display = 'none';
     const progressContainer = document.getElementById('progress-container');
-    if (progressContainer) {
-        progressContainer.style.display = 'block';
-    }
-
-    // Reset score and current question
+    if (progressContainer) progressContainer.style.display = 'block';
     score = 0;
     currentQuestionIndex = 0;
-
-    // Show the first question
     showQuestion();
 }
 
-// 5. Function to Show the Current Question
+// Show Question
 function showQuestion() {
     const questionObj = questions[currentQuestionIndex];
-
-    // Build the question content
-    let html = `
-        <img src="${questionObj.image}" alt="Image">
-        <p>${questionObj.question}</p>
-    `;
-
-    // Add answer options
+    let html = `<img src="${questionObj.image}" alt="Image"><p>${questionObj.question}</p>`;
     questionObj.options.forEach((option, index) => {
-        // Add data attribute to identify the Easter egg trigger
-        let dataAttribute = '';
-        if (option.text === "The creator of this wonderful game!") {
-            dataAttribute = 'data-easter-egg="true"';
-        }
-        html += `
-            <button class="button" onclick="selectOption(${index})" ${dataAttribute}>
-                ${option.text}
-            </button>
-        `;
+        html += `<button class="button" onclick="selectOption(${index})">${option.text}</button>`;
     });
-
     gameDiv.innerHTML = html;
-
-    // Update the progress bar
     updateProgressBar();
 }
 
-// 6. Function to Handle Option Selection
+// Select Option
 function selectOption(index) {
     const questionObj = questions[currentQuestionIndex];
     const option = questionObj.options[index];
-    const selectedButton = gameDiv.querySelectorAll('.button')[index];
-    const isEasterEgg = selectedButton.getAttribute('data-easter-egg') === 'true';
-
-    if (isEasterEgg) {
-        // Show the Easter Egg modal
-        showEasterEgg();
-    }
-
-    // Check if the answer is correct
     if (option.correct) {
         score += 10;
         appendFeedback("Correct! Score: " + score, true);
     } else {
         appendFeedback("Incorrect. Score: " + score, false);
     }
+    document.querySelectorAll('.button').forEach(button => button.disabled = true);
+    showExplanation(questionObj.explanation);
+}
 
-    // Disable all buttons to prevent multiple answers
-    const buttons = gameDiv.querySelectorAll('.button');
-    buttons.forEach(button => button.disabled = true);
+// Show Explanation
+function showExplanation(explanation) {
+    explanationText.innerText = explanation;
+    explanationBanner.style.display = 'block';
+    overlay.style.display = 'block';
+}
 
-     // ✅ Function to Continue to the Next Question
+// Continue to Next Question
 function continueToNextQuestion() {
-    explanationBanner.style.display = 'none';  // Nasconde il banner
-    overlay.style.display = 'none';  // Nasconde l'overlay
-
+    explanationBanner.style.display = 'none';
+    overlay.style.display = 'none';
     currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();  // Mostra la prossima domanda
-    } else {
-        showResults();  // Mostra i risultati finali
-    }
+    currentQuestionIndex < questions.length ? showQuestion() : showResults();
 }
 
-// 7. Function to Append Feedback
+// Append Feedback
 function appendFeedback(message, isCorrect) {
-    const feedbackClass = isCorrect ? 'correct' : 'incorrect';
-    gameDiv.innerHTML += `
-        <p class="feedback ${feedbackClass}">${message}</p>
-    `;
+    gameDiv.innerHTML += `<p class="feedback ${isCorrect ? 'correct' : 'incorrect'}">${message}</p>`;
 }
 
-// 8. Function to Update the Progress Bar
+// Update Progress Bar
 function updateProgressBar() {
-    const progressBar = document.getElementById('progress-bar');
-    const progressPercentage = ((currentQuestionIndex) / questions.length) * 100;
-    progressBar.style.width = progressPercentage + '%';
+    document.getElementById('progress-bar').style.width = `${(currentQuestionIndex / questions.length) * 100}%`;
 }
 
-// 9. Function to Show the Final Result
+// Show Results
 function showResults() {
-    let message = '';
-    let percentage = (score / (questions.length * 10)) * 100;
-
-    if (percentage === 100) {
-        message = `<h2>${percentage}% - You have achieved stable life, and your planet will flourish!</h2>`;
-    } else if (percentage >= 95) {
-        message = `<h2>${percentage}% - You have obtained life, but be careful, it could go extinct.</h2>`;
-    } else if (percentage >= 90) {
-        message = `<h2>${percentage}% - Life is on the verge of forming, but one false step and you could lose it.</h2>`;
-    } else if (percentage >= 85) {
-        message = `<h2>${percentage}% - Life is nearly formed, but the planet is not yet stable.</h2>`;
-    } else if (percentage >= 80) {
-        message = `<h2>${percentage}% - You have essential ingredients, something like a cell, but more is needed for life.</h2>`;
-    } else if (percentage >= 75) {
-        message = `<h2>${percentage}% - The planet is shaping up, water is warm, rocks are ready, but key components are missing.</h2>`;
-    } else if (percentage >= 70) {
-        message = `<h2>${percentage}% - You have water, but the atmosphere is unstable. Maybe it was the magnetic field?</h2>`;
-    } else if (percentage >= 65) {
-        message = `<h2>${percentage}% - Basic elements are present, same for an atmosphere and oceans, but conditions are harsh.</h2>`;
-    } else if (percentage >= 60) {
-        message = `<h2>${percentage}% - Volcanic activity dominates; life is unlikely.</h2>`;
-    } else if (percentage >= 55) {
-        message = `<h2>${percentage}% - The planet is too cold; life cannot thrive.</h2>`;
-    } else if (percentage >= 50) {
-        message = `<h2>${percentage}% - You were halfway there, but something went wrong.</h2>`;
-    } else if (percentage >= 45) {
-        message = `<h2>${percentage}% - The atmosphere is toxic, unsuitable for life.</h2>`;
-    } else if (percentage >= 40) {
-        message = `<h2>${percentage}% - Severe storms prevent the development of life.</h2>`;
-    } else if (percentage >= 35) {
-        message = `<h2>${percentage}% - Radiation levels are too high; life cannot form.</h2>`;
-    } else if (percentage >= 30) {
-        message = `<h2>${percentage}% - The planet lacks essential chemicals for life.</h2>`;
-    } else if (percentage >= 25) {
-        message = `<h2>${percentage}% - The planet is barren and lifeless.</h2>`;
-    } else if (percentage >= 20) {
-        message = `<h2>${percentage}% - You have a planet, but it's missing almost everything.</h2>`;
-    } else if (percentage >= 15) {
-        message = `<h2>${percentage}% - Just a rocky mass floating in space.</h2>`;
-    } else if (percentage >= 10) {
-        message = `<h2>${percentage}% - A lifeless rock with no atmosphere or water.</h2>`;
-    } else if (percentage >= 5) {
-        message = `<h2>${percentage}% - A failed attempt at planet formation.</h2>`;
-    } else {
-        message = `<h2>${percentage}% - I'm sorry, but maybe you need to start over.</h2>`;
-    }
-
-    gameDiv.innerHTML = `
-        ${message}
-        <p>Final Score: ${score} out of ${questions.length * 10}</p>
-        <button class="button" onclick="restartGame()">Play Again</button>
-    `;
-
-    // Hide the progress bar
-    const progressContainer = document.getElementById('progress-container');
-    if (progressContainer) {
-        progressContainer.style.display = 'none';
-    }
-
-    // Stop the background music
+    const percentage = (score / (questions.length * 10)) * 100;
+    gameDiv.innerHTML = `<h2>${percentage}% - Congratulations! You have completed the game.</h2><p>Final Score: ${score}</p><button class="button" onclick="restartGame()">Play Again</button>`;
+    document.getElementById('progress-container').style.display = 'none';
     backgroundMusic.pause();
 }
 
-// 10. Function to Restart the Game
+// Restart Game
 function restartGame() {
     score = 0;
     currentQuestionIndex = 0;
-
-    // Show the Start Game button
     startButton.style.display = 'inline-block';
-
-    // Reset the progress bar
-    const progressBar = document.getElementById('progress-bar');
-    if (progressBar) {
-        progressBar.style.width = '0%';
-    }
-
-    // Hide the progress bar container
-    const progressContainer = document.getElementById('progress-container');
-    if (progressContainer) {
-        progressContainer.style.display = 'none';
-    }
-
-    // Show the "Insert Coin" image
-    const insertCoin = document.getElementById('insert-coin');
-    if (insertCoin) {
-        insertCoin.style.display = 'block';
-    }
-
-    // Clear the game content
-    if (gameDiv) {
-        gameDiv.innerHTML = '';
-    }
-
-    // Stop and reset the background music
-    if (backgroundMusic) {
-        backgroundMusic.pause();
-        backgroundMusic.currentTime = 0;
-    }
+    document.getElementById('progress-bar').style.width = '0%';
+    document.getElementById('progress-container').style.display = 'none';
+    document.getElementById('insert-coin').style.display = 'block';
+    gameDiv.innerHTML = '';
+    backgroundMusic.pause();
+    backgroundMusic.currentTime = 0;
 }
 
-// 11. Function to Show the Easter Egg Modal
-function showEasterEgg() {
-    const modal = document.getElementById('easterEggModal');
-    modal.style.display = 'flex'; // Usa flex per centrare il contenuto
-    document.body.classList.add('modal-open'); // Previene lo scroll del background
-}
-
-// 12. Function to Close the Modal
-function closeModal() {
-    const modal = document.getElementById('easterEggModal');
-    modal.style.display = 'none';
-    document.body.classList.remove('modal-open'); // Ripristina lo scroll del background
-}
-
-// 13. Event Listeners for Closing the Modal
+// Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
-    const closeButton = document.querySelector('.close-button');
-    closeButton.addEventListener('click', closeModal);
-
-    // Close the modal when clicking outside of the modal content
-    window.addEventListener('click', function(event) {
-        const modal = document.getElementById('easterEggModal');
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
-
-     // ✅ Event Listener for "Continua" Button
-    const continueButton = document.getElementById('continue-button');
-    continueButton.addEventListener('click', continueToNextQuestion);
-    
+    document.getElementById('continue-button').addEventListener('click', continueToNextQuestion);
 });
