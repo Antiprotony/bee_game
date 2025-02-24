@@ -267,13 +267,6 @@ h1 {
     transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-/* Quando il banner è visibile */
-#explanation-banner.show,
-#overlay.show {
-    opacity: 1;
-    visibility: visible;
-}
-
 /* Explanation Text Styling */
 #explanation-text {
     font-size: 22px;
