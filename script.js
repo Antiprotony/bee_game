@@ -3,12 +3,13 @@
 // 1. Game Questions
 const questions = [
     {
-        question: "You are a young planet forming in the habitable zone. What do you do first?",
+        question: "Tutti conosciamo la famosa ape da miele (Apis mellifera). Ma quante specie di api ci sono in Italia secondo te?",
         options: [
-            { text: "Create an ocean", correct: false },
-            { text: "Create an atmosphere", correct: true }
+            { text: "Circa 50", correct: false },
+            { text: "Circa 250", correct: false },
+            { text: "Più di 1000", correct: true }
         ],
-        image: "images/planet.png"
+        image: "images/bee.png"
     },
     {
         question: "You have created an atmosphere and then an ocean. Which chemical elements are mostly required on lands and waters?",
