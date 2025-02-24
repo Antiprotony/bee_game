@@ -1,6 +1,9 @@
 // script.js
 
 // 1. Game Questions
+// Music Element
+const backgroundMusic = document.getElementById('background-music');
+const toggleMusicButton = document.getElementById('toggle-music-button');
 const questions = [
     {
         question: "Tutti conosciamo la famosa ape da miele (Apis mellifera). Ma quante specie di api ci sono in Italia secondo te?",
@@ -119,7 +122,9 @@ const overlay = document.getElementById('overlay');
 
 // Start Game
 function startGame() {
-    backgroundMusic.play();
+    if (backgroundMusic.paused) {
+        backgroundMusic.play(); // Riproduce la musica se è ferma
+    }
     startButton.style.display = 'none';
     const insertCoin = document.getElementById('insert-coin');
     if (insertCoin) insertCoin.style.display = 'none';
@@ -221,3 +226,14 @@ if (continueButton) {
 } else {
     console.error("❌ Pulsante Continua non trovato");
 }
+
+// Music Toggle
+toggleMusicButton.addEventListener('click', () => {
+    if (backgroundMusic.paused) {
+        backgroundMusic.play();
+        toggleMusicButton.innerText = "🔊 Disattiva Musica";
+    } else {
+        backgroundMusic.pause();
+        toggleMusicButton.innerText = "🔇 Attiva Musica";
+    }
+});
