@@ -9,14 +9,14 @@ const questions = [
             { text: "Circa 250", correct: false },
             { text: "Più di 1000", correct: true }
         ],
-        image: "images/planet.png"
+        image: "images/bee.png"
     },
     {
         question: "Quale tra questi animali non è un impollinatore?",
         options: [
             { text: "Macaone (Farfalla)", correct: false },
             { text: "Pipistrello della tequila (Pipistrello)", correct: true },
-            { text: "Picchio rosso (Uccello)", correct: false }
+            { text: "Tucano toco (Uccello)", correct: false }
         ],
         image: "images/elements.png"
     },
