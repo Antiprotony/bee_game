@@ -21,20 +21,22 @@ const questions = [
         image: "images/butterfly.png"
     },
     {
-        question: "Now the source of energy! Which is the main energy source that you need in order to originate life?",
+        question: "Gli impollinatori si trovano davvero quasi ovunque! Dove non sono mai stati visti?",
         options: [
-            { text: "Geothermal gradient", correct: true },
-            { text: "Solar energy", correct: false }
+            { text: "Nel deserto", correct: false },
+            { text: "Nello spazio", correct: false },
+            { text: "Nello spazio", correct: true }
         ],
-        image: "images/energy.png"
+        image: "images/space.png"
     },
     {
-        question: "Now you have a stable atmosphere, geothermal gradients and so on. What do you need next?",
+        question: "Alcuni impollinatori possono compiere viaggi incredibili! Quanti chilometri può percorrere la farfalla monarca durante le sue migrazioni?",
         options: [
-            { text: "Solid rocks", correct: false },
-            { text: "Porous rocks", correct: true }
+            { text: "50 km", correct: false },
+            { text: "1000 km", correct: false },
+            { text: "4500 km", correct: true }
         ],
-        image: "images/molecole.png"
+        image: "images/monarca.png"
     },
     {
         question: "The main ingredients are ready! Which conditions are probably the best for the formation of prebiotic molecules?",
@@ -45,34 +47,38 @@ const questions = [
         image: "images/fumarole.png"
     },
     {
-        question: "The conditions are perfect (maybe)! Now we need the first molecule able to replicate with a degree of information. Which is...",
+        question: "Che percentuale del cibo che mangiamo dipende dall’impollinazione animale?",
         options: [
-            { text: "Protein", correct: false },
-            { text: "DNA/RNA", correct: true }
+            { text: "25 %", correct: false },
+            { text: "45 %", correct: false },
+            { text: "75 %", correct: true }
         ],
-        image: "images/dna.png"
+        image: "images/frutta.png"
     },
     {
-        question: "Molecules, energy, warm waters. The primordial soup! Now macromolecules are inside pores of rocks, we need something more biotic to confine them.",
+        question: "Che percentuale di piante dipende almeno in parte dall’impollinazione mediata da animali?",
         options: [
-            { text: "We produce vitamins", correct: false },
-            { text: "We produce lipids", correct: true }
+            { text: "20 %", correct: false },
+            { text: "50 %", correct: false },
+            { text: "90 %", correct: true }
         ],
-        image: "images/primordial_soup.png"
+        image: "images/orchidea.png"
     },
     {
-        question: "I need something more..",
+        question: "Quale di questi alimenti non sarebbe più disponibile se gli impollinatori sparissero?",
         options: [
-            { text: "U, Th, Xe, Ar, Sb", correct: false },
-            { text: "Fe, Mo, Cu, Ni, W", correct: true }
+            { text: "Caffè", correct: false },
+            { text: "Grano", correct: true },
+            { text: "Carote", correct: false }
         ],
-        image: "images/miller_urey.png"
+        image: "images/cafe.png"
     },
     {
-        question: "I forgot something probably fundamental!",
+        question: "Di cosa si nutrono principalmente gli impollinatori?",
         options: [
-            { text: "Strong magnetic field", correct: true },
-            { text: "Weak magnetic field", correct: false }
+            { text: "Polline e nettare", correct: true },
+            { text: "Foglie", correct: false },
+            { text: "Insetti", correct: false }
         ],
         image: "images/nucleotides.png"
     },
