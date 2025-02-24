@@ -302,26 +302,3 @@ h1 {
 #overlay.show {
     display: block;  /* Mostra l'elemento */
 }
-
-#toggle-music-button {
-    background-color: #43a047;
-    color: #ffffff;
-    border: none;
-    border-radius: 12px;
-    padding: 10px 16px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: auto;
-    margin: 20px auto;
-}
-
-#toggle-music-button:hover {
-    background-color: #2e7d32;
-    transform: scale(1.1);
-}
-
-#toggle-music-button:active {
-    transform: scale(0.95);
-}
