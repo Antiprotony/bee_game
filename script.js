@@ -9,6 +9,7 @@ const questions = [
             { text: "Circa 250", correct: false },
             { text: "Più di 1000", correct: true }
         ],
+        explanation: "In Italia...",
         image: "images/bee.png"
     },
     {
@@ -105,6 +106,11 @@ const backgroundMusic = document.getElementById('background-music');
 const startButton = document.getElementById('start-button');
 const gameDiv = document.getElementById('game');
 
+// ✅ Aggiunta delle nuove variabili per il banner
+const explanationBanner = document.getElementById('explanation-banner');
+const explanationText = document.getElementById('explanation-text');
+const overlay = document.getElementById('overlay');
+
 // 4. Function to Start the Game
 function startGame() {
     // Play background music
@@ -187,15 +193,20 @@ function selectOption(index) {
     const buttons = gameDiv.querySelectorAll('.button');
     buttons.forEach(button => button.disabled = true);
 
-    // Move to the next question after a short delay
+     // ✅ Mostra il banner con la spiegazione
+    showExplanation(questionObj.explanation);
+
+ // Function to Continue to the Next Question
+function continueToNextQuestion() {
+    explanationBanner.style.display = 'none';  // Nasconde il banner
+    overlay.style.display = 'none';  // Nasconde l'overlay
+
     currentQuestionIndex++;
-    setTimeout(() => {
-        if (currentQuestionIndex < questions.length) {
-            showQuestion();
-        } else {
-            showResults();
-        }
-    }, 2000); // 2-second delay
+    if (currentQuestionIndex < questions.length) {
+        showQuestion();  // Mostra la prossima domanda
+    } else {
+        showResults();  // Mostra i risultati finali
+    }
 }
 
 // 7. Function to Append Feedback
@@ -342,4 +353,9 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+
+     // ✅ Event Listener for "Continua" Button
+    const continueButton = document.getElementById('continue-button');
+    continueButton.addEventListener('click', continueToNextQuestion);
+    
 });
