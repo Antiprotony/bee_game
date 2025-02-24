@@ -201,10 +201,10 @@ function restartGame() {
     backgroundMusic.currentTime = 0;
 }
 
-// Event Listeners
-document.addEventListener('DOMContentLoaded', () => {
-    const continueButton = document.getElementById('continue-button');
-    if (continueButton) {
-        continueButton.addEventListener('click', continueToNextQuestion);
-    }
-});
+// Event Listener per il pulsante "Continua"
+const continueButton = document.getElementById('continue-button');
+if (continueButton) {
+    continueButton.onclick = continueToNextQuestion; // Metodo più semplice e compatibile
+} else {
+    console.error("❌ Pulsante Continua non trovato");
+}
