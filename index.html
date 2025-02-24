@@ -1,55 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-     <meta charset="UTF-8">
-    <title>Gli Insetti Impollinatori</title>
+    <meta charset="UTF-8">
+    <title>Gli Insetti Impollinatori - Gioco Educativo</title>
+    <meta name="description" content="Un gioco educativo e divertente per scoprire il mondo degli insetti impollinatori.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="styles.css">
-    <!-- Include the font if needed -->
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <!-- Meta tag for mobile optimization -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Bangers&display=swap" rel="stylesheet">
+    <link rel="preload" href="images/coin.png" as="image">
+    <link rel="preload" href="images/image.png" as="image">
 </head>
 <body>
     <div class="game-container">
         <h1>Gli Insetti Impollinatori</h1>
-        
-        <!-- Insert Coin Image and Text -->
+
         <div id="insert-coin">
-            <img src="images/coin.png" alt="Insert Coin" class="coin-image">
+            <img src="images/coin.png" alt="Moneta virtuale per iniziare il gioco" class="coin-image">
         </div>
-        
-        <button class="button" id="start-button" onclick="startGame()">Esploriamo il mondo degli Impollinatori insieme!</button>
-        
-        <!-- Progress Bar -->
+
+        <button class="button" id="start-button" onclick="startGame()" aria-label="Inizia il gioco sugli insetti impollinatori">Esploriamo il mondo degli Impollinatori insieme!</button>
+
         <div id="progress-container" style="display: none;">
             <div id="progress-bar"></div>
         </div>
-        
-        <div id="game">
-            <!-- Game content will be injected here -->
-        </div>
+
+        <div id="game"></div>
     </div>
-    
-    <!-- Footer -->
-    <div class="footer">
-        <p>Gioco Creato da Luca Tonietti</p>
-    </div>
-    
-    <!-- Audio Element -->
+
+    <footer class="footer">
+        <p>Gioco creato da <strong>Luca Tonietti</strong></p>
+    </footer>
+
     <audio id="background-music" loop>
         <source src="audio/background-music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+        Il tuo browser non supporta l'elemento audio.
     </audio>
-    
-    <!-- Easter Egg Modal (Placed outside the game-container) -->
-    <div id="easterEggModal" class="modal">
+
+    <div id="easterEggModal" class="modal" role="dialog" aria-labelledby="easterEggTitle" aria-hidden="true">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <img src="images/image.png" alt="Easter Egg Image" class="modal-image">
-            <p class="modal-text">That's the real correct answer!</p>
+            <span class="close-button" role="button" aria-label="Chiudi la finestra">&times;</span>
+            <img src="images/image.png" alt="Immagine Easter Egg" class="modal-image">
+            <p class="modal-text" id="easterEggTitle">Questa è la risposta davvero corretta!</p>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
