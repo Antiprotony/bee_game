@@ -12,12 +12,13 @@ const questions = [
         image: "images/bee.png"
     },
     {
-        question: "You have created an atmosphere and then an ocean. Which chemical elements are mostly required on lands and waters?",
+        question: "Quale tra questi animali non è un impollinatore?",
         options: [
-            { text: "Ca, K, Sc, As, Au", correct: false },
-            { text: "C, N, O, P, S, H", correct: true }
+            { text: "Farfalla Macaone", correct: false },
+            { text: "Pipistrello della Tequila", correct: false },
+            { text: "Tucano Tuco", correct: true }
         ],
-        image: "images/elements.png"
+        image: "images/butterfly.png"
     },
     {
         question: "Now the source of energy! Which is the main energy source that you need in order to originate life?",
