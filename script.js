@@ -36,7 +36,7 @@ const questions = [
             { text: "1000 km", correct: false },
             { text: "4500 km", correct: true }
         ],
-        image: "images/molecole.png"
+        image: "images/monarca.png"
     },
     {
         question: "Che percentuale del cibo che mangiamo dipende dall’impollinazione animale?",
@@ -45,7 +45,7 @@ const questions = [
             { text: "45 %", correct: false },
             { text: "75 %", correct: true }
         ],
-        image: "images/fumarole.png"
+        image: "images/frutta.png"
     },
     {
         question: "Che percentuale di piante dipende almeno in parte dall’impollinazione mediata da animali?",
@@ -54,7 +54,7 @@ const questions = [
             { text: "50 %", correct: false },
             { text: "90 %", correct: true }
         ],
-        image: "images/dna.png"
+        image: "images/orchidea.png"
     },
     {
         question: "Quale di questi alimenti non sarebbe più disponibile se gli impollinatori sparissero?",
@@ -63,7 +63,7 @@ const questions = [
             { text: "Grano", correct: false },
             { text: "Carote", correct: false }
         ],
-        image: "images/primordial_soup.png"
+        image: "images/cafe.png"
     },
     {
         question: "Quale è uno dei principali rischi per gli impollinatori?",
