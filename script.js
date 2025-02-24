@@ -122,9 +122,7 @@ const overlay = document.getElementById('overlay');
 
 // Start Game
 function startGame() {
-    if (backgroundMusic.paused) {
-        backgroundMusic.play(); // Riproduce la musica se è ferma
-    }
+    backgroundMusic.play();
     startButton.style.display = 'none';
     const insertCoin = document.getElementById('insert-coin');
     if (insertCoin) insertCoin.style.display = 'none';
