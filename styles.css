@@ -108,55 +108,29 @@ body::after {
 
 /* Title Styling */
 h1 {
-    font-size: 32px;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px #FFFF00; /* Yellow shadow */
-    color: #ff00ff;
-    border: 4px double #00ff00; /* Double pixelated border */
-    padding: 10px;
-    display: inline-block;
-    animation: flicker 5.5s infinite; /* Flicker animation */
-}
-
-/* Insert Coin Text Styling */
-.insert-coin-text {
-    font-size: 18px;
-    color: #ff00ff;
-    text-shadow: 1px 1px #000000;
-    animation: blink 1s infinite;
-}
-
-/* Bordature tratteggiate per il messaggio finale */
-#game h2 {
-    font-size: 28px;
+    font-size: 42px;
+    color: #d32f2f;
     margin-bottom: 20px;
-    text-shadow: 2px 2px #FFFF00; /* Ombra gialla */
-    color: #ff00ff;
-    border: 4px dashed #00ff00; /* Bordo tratteggiato */
+    text-shadow: 2px 2px #ffca28; /* Yellow shadow */
     padding: 10px;
     display: inline-block;
-    width: 100%;
-    max-width: 600px;
-    /* Aggiunta di un'ombra esterna */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    border-bottom: 4px solid #8bc34a;
+    animation: fadeIn 1.5s ease; /* Flicker animation */
 }
 
 /* Button Styling */
 .button {
-    background-color: #000;
-    color: #00ff00;
-    padding: 20px 10px;
-    margin: 15px auto;
-    border: 2px solid #00ff00;
+    background-color: #8bc34a;
+    color: #ffffff;
+    padding: 15px 25px;
+    border: none;
     cursor: pointer;
     font-size: 18px;
-    display: block;
     width: 90%;
     max-width: 400px;
     text-decoration: none;
-    font-family: 'Press Start 2P', cursive;
-    box-shadow: 2px 2px #ff00ff;
-    transition: background-color 0.3s, transform 0.1s;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s, transform 0.2s;
     white-space: normal; /* Allow text to wrap */
     word-wrap: break-word; /* Break long words if necessary */
     overflow-wrap: break-word; /* Handle long words */
@@ -164,11 +138,8 @@ h1 {
 }
 
 .button:hover {
-    background-color: #00ff00;
-    color: #000;
-    transform: translate(-2px, -2px) rotate(-1deg); /* Slight rotation */
-    /* Add more intense shadows on hover */
-    box-shadow: 4px 4px 10px rgba(255, 0, 255, 0.7), inset 0px 0px 5px rgba(0, 255, 0, 0.7);
+    background-color: #689f38;
+    transform: scale(1.05);
 }
 
 /* Image Styling within the Game */
@@ -224,18 +195,17 @@ h1 {
 
 /* Progress Bar Styling */
 #progress-container {
-    width: 100%;
-    background-color: #555;
+    width: 80%;
+    background-color: #e0e0e0;
     margin: 20px 0;
-    height: 20px;
-    border: 2px solid #00ff00;
-    display: none; /* Hidden initially */
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 #progress-bar {
     width: 0%;
     height: 100%;
-    background-color: #ff00ff;
+    background-color: #ffb300;
     border-radius: 10px; /* Rounded edges for a vintage look */
     transition: width 0.5s ease;
 }
@@ -250,17 +220,16 @@ h1 {
 
 /* Feedback Styling */
 .feedback {
-    font-size: 20px;
-    margin-top: 20px;
-    text-shadow: 1px 1px #ff00ff;
-    /* Add inner shadow for depth */
-    box-shadow: inset 1px 1px 5px rgba(0,0,0,0.5);
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .feedback.correct {
-    color: #00ff00;
+    color: #388e3c;
+    background: #ffcdd2;
 }
 
 .feedback.incorrect {
