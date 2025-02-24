@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <title>ORIGIN OF LIFE - The Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include the font if needed -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Meta tag for mobile optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="game-container">
+        <h1>ORIGIN OF LIFE</h1>
+        
+        <!-- Insert Coin Image and Text -->
+        <div id="insert-coin">
+            <img src="images/coin.png" alt="Insert Coin" class="coin-image">
+        </div>
+        
+        <button class="button" id="start-button" onclick="startGame()">INSERT COIN TO PLAY</button>
+        
+        <!-- Progress Bar -->
+        <div id="progress-container" style="display: none;">
+            <div id="progress-bar"></div>
+        </div>
+        
+        <div id="game">
+            <!-- Game content will be injected here -->
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>Game created by Luca Tonietti</p>
+    </div>
+    
+    <!-- Audio Element -->
+    <audio id="background-music" loop>
+        <source src="audio/background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Easter Egg Modal (Placed outside the game-container) -->
+    <div id="easterEggModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img src="images/image.png" alt="Easter Egg Image" class="modal-image">
+            <p class="modal-text">That's the real correct answer!</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
