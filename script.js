@@ -193,10 +193,7 @@ function selectOption(index) {
     const buttons = gameDiv.querySelectorAll('.button');
     buttons.forEach(button => button.disabled = true);
 
-     // ✅ Mostra il banner con la spiegazione
-    showExplanation(questionObj.explanation);
-
- // Function to Continue to the Next Question
+     // ✅ Function to Continue to the Next Question
 function continueToNextQuestion() {
     explanationBanner.style.display = 'none';  // Nasconde il banner
     overlay.style.display = 'none';  // Nasconde l'overlay
