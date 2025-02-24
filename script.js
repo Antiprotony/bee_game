@@ -2,7 +2,6 @@
 
 // 1. Game Questions
 // Music Element
-const backgroundMusic = document.getElementById('background-music');
 const toggleMusicButton = document.getElementById('toggle-music-button');
 const questions = [
     {
