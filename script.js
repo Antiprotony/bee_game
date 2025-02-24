@@ -1,8 +1,6 @@
 // script.js
 
 // 1. Game Questions
-// Music Element
-const toggleMusicButton = document.getElementById('toggle-music-button');
 const questions = [
     {
         question: "Tutti conosciamo la famosa ape da miele (Apis mellifera). Ma quante specie di api ci sono in Italia secondo te?",
