@@ -9,8 +9,8 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #ffecb3, #ffca28);
-    color: #4e342e;
+    background: linear-gradient(to bottom, #ffeaa7, #fdcb6e);
+    color: #2d3436;
     text-align: center;
     overflow-x: hidden;
 }
@@ -33,7 +33,7 @@ body {
     width: 100%;
     margin: 20px auto;
     padding: 20px;
-    border: 3px solid #8bc34a;
+    border: 4px solid #00b894;
     border-radius: 20px;
     background: #ffffff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -43,26 +43,26 @@ body {
 /* Title Styling */
 h1 {
     font-size: 42px;
-    color: #d32f2f;
+    color: #d63031;
     margin-bottom: 20px;
-    text-shadow: 2px 2px #ffca28;
+    text-shadow: 2px 2px #fdcb6e;
     padding: 10px;
     display: inline-block;
-    border-bottom: 4px solid #8bc34a;
+    border-bottom: 4px solid #00b894;
     animation: fadeIn 1.5s ease;
 }
 
 /* Insert Coin Text Styling */
 .insert-coin-text {
     font-size: 22px;
-    color: #ffb300;
+    color: #e17055;
     font-weight: bold;
     animation: blink 1.2s infinite;
 }
 
 /* Button Styling */
 .button {
-    background-color: #8bc34a;
+    background-color: #00b894;
     color: #ffffff;
     padding: 15px 25px;
     border: none;
@@ -80,7 +80,7 @@ h1 {
 }
 
 .button:hover {
-    background-color: #689f38;
+    background-color: #0984e3;
     transform: scale(1.05);
 }
 
@@ -88,7 +88,7 @@ h1 {
 #game img, .schermata-iniziale {
     max-width: 100%;
     height: auto;
-    border: 3px solid #8bc34a;
+    border: 4px solid #00b894;
     border-radius: 15px;
     margin: 20px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -105,7 +105,7 @@ h1 {
 /* Progress Bar Styling */
 #progress-container {
     width: 80%;
-    background-color: #e0e0e0;
+    background-color: #dfe6e9;
     border-radius: 10px;
     overflow: hidden;
     margin: 20px 0;
@@ -114,14 +114,14 @@ h1 {
 #progress-bar {
     width: 0%;
     height: 20px;
-    background-color: #ffb300;
+    background-color: #fdcb6e;
     transition: width 0.5s ease;
 }
 
 /* Score Display Styling */
 #score-display {
     font-size: 20px;
-    color: #4e342e;
+    color: #2d3436;
     font-weight: bold;
     margin-top: 10px;
 }
@@ -136,15 +136,15 @@ h1 {
 }
 
 .feedback.correct {
-    color: #388e3c;
-    background: #c8e6c9;
-    border: 2px solid #388e3c;
+    color: #27ae60;
+    background: #dff9fb;
+    border: 2px solid #27ae60;
 }
 
 .feedback.incorrect {
-    color: #d32f2f;
-    background: #ffcdd2;
-    border: 2px solid #d32f2f;
+    color: #c0392b;
+    background: #fab1a0;
+    border: 2px solid #c0392b;
 }
 
 /* Modal Styling */
@@ -166,7 +166,7 @@ h1 {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 15px;
-    border: 3px solid #8bc34a;
+    border: 4px solid #00b894;
     width: 80%;
     max-width: 500px;
     text-align: center;
@@ -175,7 +175,7 @@ h1 {
 }
 
 .close-button {
-    color: #d32f2f;
+    color: #d63031;
     font-size: 28px;
     font-weight: bold;
     position: absolute;
@@ -185,7 +185,16 @@ h1 {
 }
 
 .close-button:hover {
-    color: #b71c1c;
+    color: #c0392b;
+}
+
+/* Footer Styling */
+.footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: #ffeaa7;
+    color: #2d3436;
+    border-top: 2px solid #00b894;
 }
 
 /* Responsive Design */
@@ -238,4 +247,3 @@ h1 {
 .fade-in {
     animation: fadeIn 1.5s ease-out;
 }
-
