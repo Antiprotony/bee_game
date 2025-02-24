@@ -25,7 +25,7 @@ const questions = [
         options: [
             { text: "Nel deserto", correct: false },
             { text: "Nello spazio", correct: false },
-            { text: "Nello spazio", correct: true }
+            { text: "Sulla cima dell'Everest", correct: true }
         ],
         image: "images/space.png"
     },
@@ -72,7 +72,7 @@ const questions = [
             { text: "• Rimuovendo tronchi e ceppi di alberi da terra", correct: false },
             { text: "Sostituendo recinzioni metalliche con siepi", correct: true }
         ],
-        image: "images/ceppo.png"
+        image: "images/cappo.png"
     },
     {
         question: "Ora servono luoghi adatti alla nidificazione degli impollinatori, cosa pensi possa essere utile?",
