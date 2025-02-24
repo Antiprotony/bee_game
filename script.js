@@ -203,5 +203,8 @@ function restartGame() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('continue-button').addEventListener('click', continueToNextQuestion);
+    const continueButton = document.getElementById('continue-button');
+    if (continueButton) {
+        continueButton.addEventListener('click', continueToNextQuestion);
+    }
 });
