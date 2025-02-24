@@ -74,9 +74,21 @@ h1 {
 
 /* Question Text Styling */
 #game h2 {
-    font-size: 40px; /* Increased text size */
+    font-size: 32px;
     color: #37474f;
     margin-bottom: 20px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Button Styling */
@@ -102,6 +114,11 @@ h1 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+.button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
 #start-button {
     animation: pulse 2s infinite;
 }
@@ -120,6 +137,7 @@ h1 {
     border-radius: 12px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 #game img:hover {
@@ -156,6 +174,13 @@ h1 {
 .feedback.correct {
     color: #2e7d32;
     background: #c8e6c9;
+    animation: shine 1s ease-out;
+}
+
+@keyframes shine {
+    0% { background-color: #c8e6c9; box-shadow: 0 0 5px #2e7d32; }
+    50% { background-color: #a5d6a7; box-shadow: 0 0 20px #4caf50; }
+    100% { background-color: #c8e6c9; box-shadow: 0 0 5px #2e7d32; }
 }
 
 .feedback.incorrect {
