@@ -43,6 +43,17 @@ h1 {
     animation: fadeIn 1.5s ease;
 }
 
+/* Image Styling - Responsive */
+.question-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    object-fit: contain;
+    display: block;
+}
+
 /* Button Styling */
 .button {
     background-color: #8bc34a;
@@ -147,6 +158,11 @@ h1 {
     .button {
         font-size: 16px;
         padding: 12px 20px;
+    }
+
+    .question-image {
+        max-width: 100%;
+        border-radius: 5px;
     }
 }
 
