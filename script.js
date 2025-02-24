@@ -27,7 +27,7 @@ const questions = [
             { text: "Nello spazio", correct: false },
               { text: "Sull'Everest", correct: true }
         ],
-        image: "images/energy.png"
+        image: "images/space.png"
     },
     {
         question: "Alcuni impollinatori possono compiere viaggi incredibili! Quanti chilometri può percorrere la farfalla monarca durante le sue migrazioni?",
