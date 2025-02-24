@@ -225,14 +225,3 @@ if (continueButton) {
 } else {
     console.error("❌ Pulsante Continua non trovato");
 }
-
-// Music Toggle
-toggleMusicButton.addEventListener('click', () => {
-    if (backgroundMusic.paused) {
-        backgroundMusic.play().catch(err => console.error("Playback failed: ", err));
-        toggleMusicButton.innerText = "🔊 Disattiva Musica";
-    } else {
-        backgroundMusic.pause();
-        toggleMusicButton.innerText = "🔇 Attiva Musica";
-    }
-});
