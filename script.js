@@ -6,7 +6,7 @@ const questions = [
         question: "Tutti conosciamo la famosa ape da miele, ma quante specie di api ci sono in Italia secondo te?",
         options: [
             { text: "Circa 50", correct: false },
-            { text: "Circa 250", correct: true },
+            { text: "Circa 250", correct: false },
             { text: "Più di 1000", correct: true }
         ],
         image: "images/planet.png"
@@ -16,16 +16,16 @@ const questions = [
         options: [
             { text: "Macaone (Farfalla)", correct: false },
             { text: "Pipistrello della tequila (Pipistrello)", correct: true },
-            { text: "Picchio rosso (Uccello)", correct: true }
+            { text: "Picchio rosso (Uccello)", correct: false }
         ],
         image: "images/elements.png"
     },
     {
         question: "Gli impollinatori si trovano davvero quasi ovunque! Dove non sono mai stati visti?",
         options: [
-            { text: "Nel deserto", correct: true },
+            { text: "Nel deserto", correct: false },
             { text: "Nello spazio", correct: false },
-              { text: "Sull'Everest", correct: false }
+              { text: "Sull'Everest", correct: true }
         ],
         image: "images/energy.png"
     },
@@ -33,7 +33,7 @@ const questions = [
         question: "Alcuni impollinatori possono compiere viaggi incredibili! Quanti chilometri può percorrere la farfalla monarca durante le sue migrazioni?",
         options: [
             { text: "50 km", correct: false },
-            { text: "1000 km", correct: true },
+            { text: "1000 km", correct: false },
             { text: "4500 km", correct: true }
         ],
         image: "images/molecole.png"
@@ -41,9 +41,9 @@ const questions = [
     {
         question: "Che percentuale del cibo che mangiamo dipende dall’impollinazione animale?",
         options: [
-            { text: "25 %", correct: true },
+            { text: "25 %", correct: false },
             { text: "45 %", correct: false },
-            { text: "75 %", correct: false }
+            { text: "75 %", correct: true }
         ],
         image: "images/fumarole.png"
     },
@@ -51,7 +51,7 @@ const questions = [
         question: "Che percentuale di piante dipende almeno in parte dall’impollinazione mediata da animali?",
         options: [
             { text: "20 %", correct: false },
-            { text: "50 %", correct: true },
+            { text: "50 %", correct: false },
             { text: "90 %", correct: true }
         ],
         image: "images/dna.png"
@@ -59,9 +59,9 @@ const questions = [
     {
         question: "Quale di questi alimenti non sarebbe più disponibile se gli impollinatori sparissero?",
         options: [
-            { text: "Caffè", correct: false },
-            { text: "Grano", correct: true },
-            { text: "Carote", correct: true }
+            { text: "Caffè", correct: true },
+            { text: "Grano", correct: false },
+            { text: "Carote", correct: false }
         ],
         image: "images/primordial_soup.png"
     },
@@ -70,7 +70,7 @@ const questions = [
         options: [
             { text: "Traffico stradale", correct: false },
             { text: "Pesticidi", correct: true },
-            { text: "Ragnatele", correct: true }
+            { text: "Ragnatele", correct: false }
         ],
         image: "images/miller_urey.png"
     },
@@ -86,18 +86,18 @@ const questions = [
     {
         question: "Da cosa è composto principalmente il nettare?",
         options: [
-            { text: "Zuccheri", correct: false },
-            { text: "Proteine", correct: true },
-            { text: "Vitamine", correct: true }
+            { text: "Zuccheri", correct: true },
+            { text: "Proteine", correct: false },
+            { text: "Vitamine", correct: false }
         ],
         image: "images/rna.png"
     },
     {
         question: "Ora che abbiamo verificato la nostra conoscenza degli impollinatori è ora di trovare delle soluzioni per aiutarli. Gli impollinatori stanno morendo di caldo in città, devi trovare una soluzione",
         options: [
-            { text: "Crea zone alberate", correct: false },
-            { text: "Spruzza acqua sulle strade", correct: true },
-            { text: "Aggiungi cemento per ridurre le piante infestanti", correct: true }
+            { text: "Crea zone alberate", correct: true },
+            { text: "Spruzza acqua sulle strade", correct: false },
+            { text: "Aggiungi cemento per ridurre le piante infestanti", correct: false }
         ],
         image: "images/hydrothermal_vent.png"
     },
@@ -106,16 +106,16 @@ const questions = [
         options: [
             { text: "Tagliare il prato ogni settimana", correct: false },
             { text: "Coltivare piante aromatiche sul balcone", correct: true },
-            { text: "Aumentare l'illuminazione notturna per attirare più insetti", correct: true }
+            { text: "Aumentare l'illuminazione notturna per attirare più insetti", correct: false }
         ],
         image: "images/abiogenesis.png"
     },
     {
         question: "In ambiente agricolo gli impollinatori stanno diminuendo e i contadini perdono produzione. Cosa si può fare per aiutarli?",
         options: [
-            { text: "Circondare i campi coltivati con fiori selvatici", correct: false },
-            { text: "Usare diserbanti per eliminare le erbacce", correct: true },
-            { text: "Arare il terreno più spesso per evitare la cescita spontanea di piante", correct: true }
+            { text: "Circondare i campi coltivati con fiori selvatici", correct: true },
+            { text: "Usare diserbanti per eliminare le erbacce", correct: false },
+            { text: "Arare il terreno più spesso per evitare la cescita spontanea di piante", correct: false }
         ],
         image: "images/rna_world.png"
     },
