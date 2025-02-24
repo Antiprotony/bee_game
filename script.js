@@ -39,32 +39,6 @@ const questions = [
         image: "images/monarca.png"
     },
     {
-        question: "The main ingredients are ready! Which conditions are probably the best for the formation of prebiotic molecules?",
-        options: [
-            { text: "Warm water, moderate UV radiation", correct: true },
-            { text: "Cold water, high UV radiation", correct: false }
-        ],
-        image: "images/fumarole.png"
-    },
-    {
-        question: "Che percentuale del cibo che mangiamo dipende dall’impollinazione animale?",
-        options: [
-            { text: "25 %", correct: false },
-            { text: "45 %", correct: false },
-            { text: "75 %", correct: true }
-        ],
-        image: "images/frutta.png"
-    },
-    {
-        question: "Che percentuale di piante dipende almeno in parte dall’impollinazione mediata da animali?",
-        options: [
-            { text: "20 %", correct: false },
-            { text: "50 %", correct: false },
-            { text: "90 %", correct: true }
-        ],
-        image: "images/orchidea.png"
-    },
-    {
         question: "Quale di questi alimenti non sarebbe più disponibile se gli impollinatori sparissero?",
         options: [
             { text: "Caffè", correct: false },
@@ -74,102 +48,51 @@ const questions = [
         image: "images/cafe.png"
     },
     {
-        question: "Di cosa si nutrono principalmente gli impollinatori?",
+        question: "Bene! Adesso è ora di agire! Gli impollinatori stanno morendo di caldo in città, devi trovare una soluzione..",
         options: [
-            { text: "Polline e nettare", correct: true },
-            { text: "Foglie", correct: false },
-            { text: "Insetti", correct: false }
+            { text: "Creare più zone alberate", correct: true },
+            { text: "Irrigare frequentemente i giardini e aree verdi", correct: false },
+            { text: "Spruzzare acqua nebulizzata nelle strade per rinfrescare l’ambiente", correct: false }
         ],
-        image: "images/nucleotides.png"
+        image: "images/sole.png"
     },
     {
-        question: "What can help me to keep me warm?",
+        question: "Ora che le temperature sono migliorate, gli impollinatori faticano comunque aprosperare in città. Come puoi rendere l’ambiente più accogliente?",
         options: [
-            { text: "Presence of deeply shadowed cavities", correct: false },
-            { text: "Albedo effect", correct: true }
+            { text: "Tagliando il prato ogni settimana", correct: false },
+            { text: "Coltivando piante aromatiche sul balcone", correct: true },
+            { text: "Aumentando l'illuminazione notturna per attirare più insetti", correct: false }
         ],
-        image: "images/rna.png"
+        image: "images/balcone.png"
     },
     {
-        question: "On the bottom of my oceans something is mixing chemicals with the water! What is it?",
+        question: "Alcuni impollinatori hanno iniziato ad apprezzare i cambiamenti, come potresti renderla la tua città ancora più accogliente?",
         options: [
-            { text: "A big magmatic cauldron!", correct: false },
-            { text: "Oh! A Hydrothermal Vent!", correct: true }
+            { text: "• Rimuovendo i cumuli di foglie secche da terra", correct: false },
+            { text: "• Rimuovendo tronchi e ceppi di alberi da terra", correct: false },
+            { text: "Sostituendo recinzioni metalliche con siepi", correct: true }
         ],
-        image: "images/hydrothermal_vent.png"
+        image: "images/ceppo.png"
     },
     {
-        question: "In my primordial phase, which gases do I need to host life?",
+        question: "Ora servono luoghi adatti alla nidificazione degli impollinatori, cosa pensi possa essere utile?",
         options: [
-            { text: "Oxygen and Noble Gases", correct: false },
-            { text: "Methane, Ammonia, and Hydrogen Sulfide", correct: true }
+            { text: "Muretti a secco", correct: false },
+            { text: "Suolo nudo", correct: false },
+            { text: "Entrambe le risposte precedenti", correct: true }
         ],
-        image: "images/abiogenesis.png"
+        image: "images/casetta.png"
     },
     {
-        question: "I think that I'm almost ready for life. Which life can I choose first?",
+        question: "Per pianificare al meglio la tua città a misura di impollinatore è meglio:",
         options: [
-            { text: "Eukaryotes", correct: false },
-            { text: "Prokaryotes", correct: true }
+            { text: "Creare tante aree verdi anche se piccole di dimensioni", correct: true },
+            { text: "• Piantare alberi sempreverdi per mantenere il verde tutto l'anno", correct: false },
+           { text: "Importare fiori particolarmente ricchi di nettare da altri paesi", correct: false }
         ],
-        image: "images/rna_world.png"
-    },
-    {
-        question: "Which type of chemical bond do I require for the formation of complex organic molecules?",
-        options: [
-            { text: "Covalent bond", correct: true },
-            { text: "Ionic bond", correct: false }
-        ],
-        image: "images/covalent_bond.png"
-    },
-    {
-        question: "Some of you told me that I really need lipids. But why?!",
-        options: [
-            { text: "They are able to produce essential molecules for living organisms", correct: false },
-            { text: "They model early cell membranes", correct: true }
-        ],
-        image: "images/liposome.png"
-    },
-    {
-        question: "I really would like to have life on my surface! But sometimes I miss chemicals. Maybe my celestial friends can help me. But, who?",
-        options: [
-            { text: "Comets and asteroids", correct: true },
-            { text: "Moons and planets", correct: false }
-        ],
-        image: "images/panspermia.png"
-    },
-    {
-        question: "I've heard that laboratories can create prebiotic molecules. A couple of scientists did this. Who are they?",
-        options: [
-            { text: "Miller and Urey", correct: true },
-            { text: "Born and Oppenheimer", correct: false } // Easter egg trigger
-        ],
-        image: "images/miller.png"
-    },
-    {
-        question: "A planet friend of mine has already originated life. Seen from above, it looks purple. That's probably due to the earliest photosynthetic life on it. But why purple?",
-        options: [
-            { text: "Presence of porphyrin-based chlorophyll", correct: false },
-            { text: "Presence of retinal-like molecules", correct: true }
-        ],
-        image: "images/purple.png"
-    },
-    {
-        question: "I think we are almost ready, but I would like to use another source of energy that can provide the necessary energy for forming complex organic molecules.",
-        options: [
-            { text: "Lightning", correct: true },
-            { text: "Nuclear Energy", correct: false }
-        ],
-        image: "images/fulmini.png"
-    },
-    {
-        question: "Other planets I've met are talking about their life and LUCA. But, who is LUCA?",
-        options: [
-            { text: "The creator of this wonderful game!", correct: true }, // Easter egg trigger
-            { text: "The Last Universal Common Ancestor!", correct: true }
-        ],
-        image: "images/luca.png"
+        image: "images/mappa.png"
     }
+    
     // Puoi aggiungere altre domande qui se lo desideri
 ];
 
