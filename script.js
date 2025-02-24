@@ -121,8 +121,11 @@ const explanationText = document.getElementById('explanation-text');
 const overlay = document.getElementById('overlay');
 
 // Start Game
+// Start Game
 function startGame() {
-    backgroundMusic.play();
+    if (backgroundMusic.paused) {
+        backgroundMusic.play(); // Riproduce la musica se è ferma
+    }
     startButton.style.display = 'none';
     const insertCoin = document.getElementById('insert-coin');
     if (insertCoin) insertCoin.style.display = 'none';
@@ -132,6 +135,7 @@ function startGame() {
     currentQuestionIndex = 0;
     showQuestion();
 }
+
 
 // Show Question
 function showQuestion() {
