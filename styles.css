@@ -150,11 +150,11 @@ h1 {
     width: 80%;                 /* Larghezza relativa allo schermo */
     max-width: 400px;           /* Massima dimensione per desktop */
     height: auto;               /* Altezza automatica per mantenere le proporzioni */
-    border: 10px solid #ff6f00;  /* Cornice color arancione */
-    border-radius: 20%;         /* Forma circolare */
+    border: 8px solid #ff6f00;  /* Cornice color arancione */
+    border-radius: 0%;         /* Forma circolare */
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5); /* Ombra per effetto 3D */
     display: block;             /* Per centrare con margin auto */
-    margin: 30px auto;          /* Margine sopra e sotto */
+    margin: 20px auto;          /* Margine sopra e sotto */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effetto hover morbido */
 }
 
