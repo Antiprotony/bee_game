@@ -261,6 +261,10 @@ function restartGame() {
 
     explanationBanner.style.display = 'none';
     overlay.style.display = 'none';
+
+    // ✅ Richiama la funzione per reinizializzare gli Event Listener
+initializeEventListeners();
+
 }
 
 // Event Listener per il pulsante "Continua"
@@ -271,3 +275,21 @@ if (continueButton) {
     console.error("❌ Pulsante Continua non trovato");
 }
 
+// ✅ Reinizializza Event Listener al Caricamento della Pagina e Dopo Restart
+function initializeEventListeners() {
+    const startButton = document.getElementById('start-button');
+    const continueButton = document.getElementById('continue-button');
+
+    if (startButton) {
+        startButton.onclick = startGame; // Reinizializza il pulsante Start
+    }
+
+    if (continueButton) {
+        continueButton.onclick = continueToNextQuestion; // Reinizializza il pulsante Continua
+    }
+}
+
+// ✅ Aggiungi Event Listener al Caricamento della Pagina
+document.addEventListener('DOMContentLoaded', () => {
+    initializeEventListeners();
+});
