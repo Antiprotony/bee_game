@@ -271,3 +271,10 @@ if (continueButton) {
 } else {
     console.error("❌ Pulsante Continua non trovato");
 }
+
+// Event Listener per il pulsante "Start"
+if (startButton) {
+    startButton.addEventListener('click', startGame); // ✅ Funziona sempre
+} else {
+    console.error("❌ Pulsante Start non trovato");
+}
