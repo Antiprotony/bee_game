@@ -227,16 +227,59 @@ function showResults() {
 
 // Restart Game
 function restartGame() {
+    // Reset punteggio e indice della domanda
     score = 0;
     currentQuestionIndex = 0;
-    startButton.style.display = 'inline-block';
-    document.getElementById('progress-bar').style.width = '0%';
-    document.getElementById('progress-container').style.display = 'none';
-    document.getElementById('insert-coin').style.display = 'block';
-    gameDiv.innerHTML = '';
-    backgroundMusic.pause();
-    backgroundMusic.currentTime = 0;
+
+    // Mostra il pulsante start
+    if (startButton) {
+        startButton.style.display = 'inline-block';
+    }
+
+    // Reset barra di progresso
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+        progressBar.style.width = '0%';
+    }
+
+    // Mostra il coin se esiste
+    const insertCoin = document.getElementById('insert-coin');
+    if (insertCoin) {
+        insertCoin.style.display = 'block';
+    }
+
+    // Nasconde il container del progresso
+    const progressContainer = document.getElementById('progress-container');
+    if (progressContainer) {
+        progressContainer.style.display = 'none';
+    }
+
+    // Pulisce l'area del gioco
+    if (gameDiv) {
+        gameDiv.innerHTML = '';
+    }
+
+    // Riporta la musica all'inizio e la ferma
+    if (backgroundMusic) {
+        backgroundMusic.pause();        // Ferma la musica
+        backgroundMusic.currentTime = 0; // Riporta la musica all'inizio
+    }
+
+    // Nasconde eventuali overlay e banner se presenti
+    if (overlay) {
+        overlay.style.display = 'none';
+    }
+    if (explanationBanner) {
+        explanationBanner.style.display = 'none';
+    }
+
+    // Disabilita il pulsante "Continua" nel caso sia ancora attivo
+    const continueButton = document.getElementById('continue-button');
+    if (continueButton) {
+        continueButton.disabled = true;
+    }
 }
+
 
 // Event Listener per il pulsante "Continua"
 const continueButton = document.getElementById('continue-button');
