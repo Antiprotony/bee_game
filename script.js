@@ -199,11 +199,31 @@ function updateProgressBar() {
 
 // Show Results
 function showResults() {
-    const percentage = (score / (questions.length * 10)) * 100;
-    gameDiv.innerHTML = `<h2>${percentage}% - Congratulations! You have completed the game.</h2><p>Final Score: ${score}</p><button class="button" onclick="restartGame()">Play Again</button>`;
+    const scoreMessages = [
+        "Forse gli impollinatori non sono il tuo forte… ma c’è sempre tempo per scoprire il loro mondo ronzante! 🐝",
+        "Qualche fiore l’hai impollinato, ma c’è ancora molto da esplorare! Continua così! 🌼",
+        "Hai piantato i primi fiori della conoscenza. Ora tocca agli insetti arrivare! 🌱",
+        "Sei sulla strada giusta! Con un po’ di nettare in più, farai grandi cose! 🍯",
+        "Metà alveare è pieno! La natura ringrazia il tuo impegno. 🌸",
+        "Bravo! Gli impollinatori iniziano a considerarti un alleato prezioso. 🦋",
+        "Ottimo lavoro! Il tuo giardino immaginario è già in fiore. 🌻",
+        "Quasi perfetto! Api, farfalle e coleotteri ti applaudono con le ali. 🐞",
+        "Complimenti! Sei praticamente il paladino degli impollinatori urbani! 🐝🌷",
+        "Sei un vero esperto! Gli impollinatori ti eleggono re della biodiversità! 👑🐝"
+    ];
+
+    const percentage = (score / questions.length) * 100;
+    const index = Math.min(Math.floor(score / 10), 9); // Calcola l'indice da 0 a 9 in base al punteggio
+
+    gameDiv.innerHTML = `
+        <h2>${percentage}% - ${scoreMessages[index]}</h2>
+        <p>Hai totalizzato <strong>${score}</strong> punti su ${questions.length}!</p>
+        <button class="button" onclick="restartGame()">Gioca di nuovo</button>
+    `;
     document.getElementById('progress-container').style.display = 'none';
     backgroundMusic.pause();
 }
+
 
 // Restart Game
 function restartGame() {
