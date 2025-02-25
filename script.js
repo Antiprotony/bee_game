@@ -230,7 +230,7 @@ function restartGame() {
     score = 0;
     currentQuestionIndex = 0;
 
-    // Ripristina la musica all'inizio e la fa ripartire
+    // Riavvia la musica dall'inizio
     if (backgroundMusic) {
         backgroundMusic.pause();
         backgroundMusic.currentTime = 0;
@@ -246,13 +246,13 @@ function restartGame() {
         progressBar.style.width = '0%';
     }
 
-    // Nasconde il contenitore del progresso
+    // Mostra il contenitore del progresso
     const progressContainer = document.getElementById('progress-container');
     if (progressContainer) {
-        progressContainer.style.display = 'none';
+        progressContainer.style.display = 'block';
     }
 
-    // Mostra la schermata iniziale (moneta, titolo, pulsante start)
+    // Mostra la schermata iniziale
     const insertCoin = document.getElementById('insert-coin');
     if (insertCoin) {
         insertCoin.style.display = 'block';
@@ -261,7 +261,7 @@ function restartGame() {
     // Pulisce l'area di gioco
     gameDiv.innerHTML = '';
 
-    // Riabilita il pulsante continua nel caso fosse stato disabilitato
+    // Riabilita il pulsante continua
     const continueButton = document.getElementById('continue-button');
     if (continueButton) {
         continueButton.disabled = false;
@@ -270,4 +270,7 @@ function restartGame() {
     // Nasconde eventuali banner ed overlay
     explanationBanner.style.display = 'none';
     overlay.style.display = 'none';
+
+    // ✅ Esegui direttamente la funzione startGame() per far ripartire il gioco senza dover cliccare di nuovo su Start
+    startGame();
 }
