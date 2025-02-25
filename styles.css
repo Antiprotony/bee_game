@@ -145,6 +145,34 @@ h1 {
     box-shadow: 0 0 20px #43a047;
 }
 
+/* Coin Image Styling */
+.coin-image {
+    width: 50%;                 /* Larghezza relativa allo schermo */
+    max-width: 300px;           /* Massima dimensione per desktop */
+    height: auto;               /* Altezza automatica per mantenere le proporzioni */
+    border: 8px solid #ff6f00;  /* Cornice color arancione */
+    border-radius: 50%;         /* Forma circolare */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Ombra per effetto 3D */
+    display: block;             /* Per centrare con margin auto */
+    margin: 20px auto;          /* Margine sopra e sotto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effetto hover morbido */
+}
+
+/* Effetto al passaggio del mouse */
+.coin-image:hover {
+    transform: scale(1.1);   /* Leggera crescita */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+}
+
+/* Adattamento per schermi piccoli */
+@media (max-width: 600px) {
+    .coin-image {
+        width: 70%;           /* Aumenta la dimensione sui telefoni */
+        border: 6px solid #ff6f00;
+    }
+}
+
+
 /* Progress Bar Styling */
 #progress-container {
     width: 100%;
