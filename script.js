@@ -150,7 +150,7 @@ function selectOption(index) {
     const questionObj = questions[currentQuestionIndex];
     const option = questionObj.options[index];
     if (option.correct) {
-        score += 10;
+        score += 1;
         appendFeedback("Correct! Score: " + score, true);
     } else {
         appendFeedback("Incorrect. Score: " + score, false);
@@ -212,11 +212,11 @@ function showResults() {
         "Sei un vero esperto! Gli impollinatori ti eleggono re della biodiversità! 👑🐝"
     ];
 
-    const percentage = (score / questions.length) * 10;
-    const index = Math.min(Math.floor(score / 10), 9); // Calcola l'indice da 0 a 9 in base al punteggio
+    const percentage = (score / questions.length) * 100;
+    const index = Math.min(Math.floor(score), 9); // Calcola l'indice da 0 a 9 in base al punteggio
 
     gameDiv.innerHTML = `
-        <h2>${percentage}% - ${scoreMessages[index]}</h2>
+        <h2>${percentage.toFixed(0)}% - ${scoreMessages[index]}</h2>
         <p>Hai totalizzato <strong>${score}</strong> punti su ${questions.length}!</p>
         <button class="button" onclick="restartGame()">Gioca di nuovo</button>
     `;
