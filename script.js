@@ -225,7 +225,7 @@ function showResults() {
 }
 
 
-// Restart Game
+// ✅ Restart Game - Soluzione Definitiva
 function restartGame() {
     score = 0;
     currentQuestionIndex = 0;
@@ -233,31 +233,30 @@ function restartGame() {
     if (backgroundMusic) {
         backgroundMusic.pause();
         backgroundMusic.currentTime = 0;
-        backgroundMusic.play();
+        backgroundMusic.play().catch(err => console.warn("Musica non può partire:", err));
     }
 
-    // ✅ Mostra nuovamente il pulsante di avvio e riassegna l'event listener in modo robusto
-    startButton.style.display = 'inline-block';
-    startButton.removeEventListener('click', startGame); // Rimuove eventuali duplicati
-    startButton.addEventListener('click', startGame); // ✅ Ora funziona sempre!
-
-
-    const progressBar = document.getElementById('progress-bar');
-    if (progressBar) progressBar.style.width = '0%';
+    // ✅ Ripristina la schermata iniziale
+    const insertCoin = document.getElementById('insert-coin');
+    if (insertCoin) insertCoin.style.display = 'block';
 
     const progressContainer = document.getElementById('progress-container');
     if (progressContainer) progressContainer.style.display = 'none';
 
-    const insertCoin = document.getElementById('insert-coin');
-    if (insertCoin) insertCoin.style.display = 'block';
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) progressBar.style.width = '0%';
+
+    if (startButton) {
+        startButton.style.display = 'inline-block';
+        startButton.onclick = startGame; // ✅ Riassegna la funzione startGame al click
+    }
 
     gameDiv.innerHTML = '';
 
-    // ✅ Riabilita il pulsante continua
     const continueButton = document.getElementById('continue-button');
     if (continueButton) {
         continueButton.disabled = false;
-        continueButton.onclick = continueToNextQuestion; // ✅ Ricollega l'evento anche al restart
+        continueButton.onclick = continueToNextQuestion;
     }
 
     explanationBanner.style.display = 'none';
@@ -272,9 +271,3 @@ if (continueButton) {
     console.error("❌ Pulsante Continua non trovato");
 }
 
-// Event Listener per il pulsante "Start"
-if (startButton) {
-    startButton.addEventListener('click', startGame); // ✅ Funziona sempre
-} else {
-    console.error("❌ Pulsante Start non trovato");
-}
