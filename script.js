@@ -236,8 +236,10 @@ function restartGame() {
         backgroundMusic.play();
     }
 
+    // ✅ Mostra nuovamente il pulsante di avvio e riassegna l'event listener in modo robusto
     startButton.style.display = 'inline-block';
-        startButton.onclick = startGame; // ✅ Aggiunto per ricollegare la funzione startGame
+    startButton.removeEventListener('click', startGame); // Rimuove eventuali duplicati
+    startButton.addEventListener('click', startGame); // ✅ Ora funziona sempre!
 
 
     const progressBar = document.getElementById('progress-bar');
