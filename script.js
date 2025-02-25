@@ -189,7 +189,7 @@ function continueToNextQuestion() {
 
 // Append Feedback
 function appendFeedback(message, isCorrect) {
-    gameDiv.innerHTML += `<p class="feedback ${isCorrect ? 'correct' : 'incorrect'}">${message}</p>`;
+    gameDiv.innerHTML += `<p class="feedback ${isCorrect ? 'corretto' : 'incorretto'}">${message}</p>`;
 }
 
 // Update Progress Bar
@@ -212,7 +212,7 @@ function showResults() {
         "Sei un vero esperto! Gli impollinatori ti eleggono re della biodiversità! 👑🐝"
     ];
 
-    const percentage = (score / questions.length) * 100;
+    const percentage = (score / questions.length) * 1;
     const index = Math.min(Math.floor(score / 10), 9); // Calcola l'indice da 0 a 9 in base al punteggio
 
     gameDiv.innerHTML = `
