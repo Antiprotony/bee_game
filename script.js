@@ -229,13 +229,35 @@ function showResults() {
 function restartGame() {
     score = 0;
     currentQuestionIndex = 0;
+
+    if (backgroundMusic) {
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
+        backgroundMusic.play();
+    }
+
     startButton.style.display = 'inline-block';
-    document.getElementById('progress-bar').style.width = '0%';
-    document.getElementById('progress-container').style.display = 'none';
-    document.getElementById('insert-coin').style.display = 'block';
+
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) progressBar.style.width = '0%';
+
+    const progressContainer = document.getElementById('progress-container');
+    if (progressContainer) progressContainer.style.display = 'none';
+
+    const insertCoin = document.getElementById('insert-coin');
+    if (insertCoin) insertCoin.style.display = 'block';
+
     gameDiv.innerHTML = '';
-    backgroundMusic.pause();
-    backgroundMusic.currentTime = 0;
+
+    // ✅ Riabilita il pulsante continua
+    const continueButton = document.getElementById('continue-button');
+    if (continueButton) {
+        continueButton.disabled = false;
+        continueButton.onclick = continueToNextQuestion; // ✅ Ricollega l'evento anche al restart
+    }
+
+    explanationBanner.style.display = 'none';
+    overlay.style.display = 'none';
 }
 
 // Event Listener per il pulsante "Continua"
