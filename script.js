@@ -229,48 +229,19 @@ function showResults() {
 function restartGame() {
     score = 0;
     currentQuestionIndex = 0;
-
-    // Riavvia la musica dall'inizio
-    if (backgroundMusic) {
-        backgroundMusic.pause();
-        backgroundMusic.currentTime = 0;
-        backgroundMusic.play();
-    }
-
-    // Mostra nuovamente il pulsante di avvio
     startButton.style.display = 'inline-block';
-
-    // Ripristina la barra di progresso
-    const progressBar = document.getElementById('progress-bar');
-    if (progressBar) {
-        progressBar.style.width = '0%';
-    }
-
-    // Mostra il contenitore del progresso
-    const progressContainer = document.getElementById('progress-container');
-    if (progressContainer) {
-        progressContainer.style.display = 'block';
-    }
-
-    // Mostra la schermata iniziale
-    const insertCoin = document.getElementById('insert-coin');
-    if (insertCoin) {
-        insertCoin.style.display = 'block';
-    }
-
-    // Pulisce l'area di gioco
+    document.getElementById('progress-bar').style.width = '0%';
+    document.getElementById('progress-container').style.display = 'none';
+    document.getElementById('insert-coin').style.display = 'block';
     gameDiv.innerHTML = '';
+    backgroundMusic.pause();
+    backgroundMusic.currentTime = 0;
+}
 
-    // Riabilita il pulsante continua
-    const continueButton = document.getElementById('continue-button');
-    if (continueButton) {
-        continueButton.disabled = false;
-    }
-
-    // Nasconde eventuali banner ed overlay
-    explanationBanner.style.display = 'none';
-    overlay.style.display = 'none';
-
-    // ✅ Esegui direttamente la funzione startGame() per far ripartire il gioco senza dover cliccare di nuovo su Start
-    startGame();
+// Event Listener per il pulsante "Continua"
+const continueButton = document.getElementById('continue-button');
+if (continueButton) {
+    continueButton.onclick = continueToNextQuestion; // Metodo più semplice e compatibile
+} else {
+    console.error("❌ Pulsante Continua non trovato");
 }
