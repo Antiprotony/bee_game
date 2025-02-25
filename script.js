@@ -227,64 +227,47 @@ function showResults() {
 
 // Restart Game
 function restartGame() {
-    // Reset punteggio e indice della domanda
     score = 0;
     currentQuestionIndex = 0;
 
-    // Mostra il pulsante start
-    if (startButton) {
-        startButton.style.display = 'inline-block';
+    // Ripristina la musica all'inizio e la fa ripartire
+    if (backgroundMusic) {
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
+        backgroundMusic.play();
     }
 
-    // Reset barra di progresso
+    // Mostra nuovamente il pulsante di avvio
+    startButton.style.display = 'inline-block';
+
+    // Ripristina la barra di progresso
     const progressBar = document.getElementById('progress-bar');
     if (progressBar) {
         progressBar.style.width = '0%';
     }
 
-    // Mostra il coin se esiste
-    const insertCoin = document.getElementById('insert-coin');
-    if (insertCoin) {
-        insertCoin.style.display = 'block';
-    }
-
-    // Nasconde il container del progresso
+    // Nasconde il contenitore del progresso
     const progressContainer = document.getElementById('progress-container');
     if (progressContainer) {
         progressContainer.style.display = 'none';
     }
 
-    // Pulisce l'area del gioco
-    if (gameDiv) {
-        gameDiv.innerHTML = '';
+    // Mostra la schermata iniziale (moneta, titolo, pulsante start)
+    const insertCoin = document.getElementById('insert-coin');
+    if (insertCoin) {
+        insertCoin.style.display = 'block';
     }
 
-    // Riporta la musica all'inizio e la ferma
-    if (backgroundMusic) {
-        backgroundMusic.pause();        // Ferma la musica
-        backgroundMusic.currentTime = 0; // Riporta la musica all'inizio
-    }
+    // Pulisce l'area di gioco
+    gameDiv.innerHTML = '';
 
-    // Nasconde eventuali overlay e banner se presenti
-    if (overlay) {
-        overlay.style.display = 'none';
-    }
-    if (explanationBanner) {
-        explanationBanner.style.display = 'none';
-    }
-
-    // Disabilita il pulsante "Continua" nel caso sia ancora attivo
+    // Riabilita il pulsante continua nel caso fosse stato disabilitato
     const continueButton = document.getElementById('continue-button');
     if (continueButton) {
-        continueButton.disabled = true;
+        continueButton.disabled = false;
     }
-}
 
-
-// Event Listener per il pulsante "Continua"
-const continueButton = document.getElementById('continue-button');
-if (continueButton) {
-    continueButton.onclick = continueToNextQuestion; // Metodo più semplice e compatibile
-} else {
-    console.error("❌ Pulsante Continua non trovato");
+    // Nasconde eventuali banner ed overlay
+    explanationBanner.style.display = 'none';
+    overlay.style.display = 'none';
 }
