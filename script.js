@@ -237,6 +237,8 @@ function restartGame() {
     }
 
     startButton.style.display = 'inline-block';
+        startButton.onclick = startGame; // ✅ Aggiunto per ricollegare la funzione startGame
+
 
     const progressBar = document.getElementById('progress-bar');
     if (progressBar) progressBar.style.width = '0%';
