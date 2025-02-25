@@ -75,8 +75,8 @@ const questions = [
     {
         question: "Alcuni impollinatori hanno iniziato ad apprezzare i cambiamenti, come potresti renderla la tua città ancora più accogliente?",
         options: [
-            { text: "• Rimuovendo i cumuli di foglie secche da terra", correct: false },
-            { text: "• Rimuovendo tronchi e ceppi di alberi da terra", correct: false },
+            { text: "Rimuovendo i cumuli di foglie secche da terra", correct: false },
+            { text: "Rimuovendo tronchi e ceppi di alberi da terra", correct: false },
             { text: "Sostituendo recinzioni metalliche con siepi", correct: true }
         ],
         explanation: "La scelta migliore per rendere la città più accogliente per gli impollinatori è sostituire le recinzioni metalliche con siepi. Le siepi offrono numerosi vantaggi ecologici: forniscono rifugi sicuri, protezione dai predatori, luoghi per la nidificazione e fonti di cibo grazie ai fiori e alle bacche che producono. Specie vegetali come il biancospino, il ligustro, la rosa canina e il prugnolo sono particolarmente apprezzate dagli insetti impollinatori, oltre a supportare uccelli e piccoli mammiferi. A differenza delle barriere artificiali, le siepi favoriscono la connessione tra le aree verdi urbane, creando corridoi ecologici che facilitano lo spostamento degli animali. Rimuovere cumuli di foglie secche o tronchi può invece privare molti insetti, come api solitarie e coleotteri, dei loro habitat naturali. Lasciare angoli selvatici con materiali organici contribuisce alla biodiversità urbana, creando microambienti vitali per numerose specie.",
@@ -96,7 +96,7 @@ const questions = [
         question: "Per pianificare al meglio la tua città a misura di impollinatore è meglio:",
         options: [
             { text: "Creare tante aree verdi anche se piccole di dimensioni", correct: true },
-            { text: "• Piantare alberi sempreverdi per mantenere il verde tutto l'anno", correct: false },
+            { text: "Piantare alberi sempreverdi per mantenere il verde tutto l'anno", correct: false },
            { text: "Importare fiori particolarmente ricchi di nettare da altri paesi", correct: false }
         ],
         explanation: "Gli impollinatori, come api, farfalle e coleotteri, hanno bisogno di spazi naturali distribuiti su tutto il territorio per nutrirsi, riprodursi e spostarsi. Anche piccoli giardini, balconi fioriti, aiuole o tetti verdi possono diventare rifugi vitali, creando una rete ecologica che collega gli habitat urbani. Questo approccio è noto come corridori ecologici e consente agli insetti di superare le barriere artificiali delle città, come strade e edifici. Piantare alberi sempreverdi non è sufficiente perché molti di essi non producono fiori ricchi di nettare, mentre importare fiori da altri paesi può introdurre specie invasive che competono con la flora locale. Favorire piante autoctone e fioriture scalari durante tutto l’anno garantisce una fonte costante di cibo, sostenendo non solo gli impollinatori ma anche l’intero ecosistema urbano.",
