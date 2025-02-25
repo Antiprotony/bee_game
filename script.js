@@ -110,7 +110,7 @@ const questions = [
 let score = 0;
 let currentQuestionIndex = 0;
 
-const backgroundMusic = document.getElementById('background-music');
+const backgroundMusic = document.getElementById('background-music1');
 const startButton = document.getElementById('start-button');
 const gameDiv = document.getElementById('game');
 const explanationBanner = document.getElementById('explanation-banner');
