@@ -296,7 +296,7 @@ h1 {
 }
 
 /* Explanation Text Styling */
-#explanation-text {
+#explanation-text, #my-feedback {
     font-size: 22px;
     color: #37474f;
     margin-bottom: 20px;
