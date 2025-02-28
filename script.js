@@ -115,6 +115,7 @@ const startButton = document.getElementById('start-button');
 const gameDiv = document.getElementById('game');
 const explanationBanner = document.getElementById('explanation-banner');
 const explanationText = document.getElementById('explanation-text');
+const myFeedback = document.getElementById('my-feedback');
 const overlay = document.getElementById('overlay');
 
 // Start Game
@@ -151,16 +152,17 @@ function selectOption(index) {
     const option = questionObj.options[index];
     if (option.correct) {
         score += 1;
-        appendFeedback("Correct! Score: " + score, true);
-    } else {
-        appendFeedback("Incorrect. Score: " + score, false);
-    }
+		myFeedback.innerText = `Corretto!`;
+	}
+	else {
+		myFeedback.innerText = `Incorretto!`;
+	}
     document.querySelectorAll('.button').forEach(button => button.disabled = true);
     showExplanation(questionObj.explanation);
 }
 
 // Show Explanation
-function showExplanation(explanation) {
+function showExplanation(explanation, index) {
     explanationText.innerText = explanation;
     explanationBanner.style.display = 'block';
     overlay.style.display = 'block';
@@ -184,12 +186,6 @@ function continueToNextQuestion() {
     if (continueButton) {
         continueButton.disabled = true; // Previene clic multipli
     }
-}
-
-
-// Append Feedback
-function appendFeedback(message, isCorrect) {
-    gameDiv.innerHTML += `<p class="feedback ${isCorrect ? 'corretto' : 'incorretto'}">${message}</p>`;
 }
 
 // Update Progress Bar
@@ -249,6 +245,7 @@ function restartGame() {
     if (startButton) {
         startButton.style.display = 'inline-block';
         startButton.onclick = startGame; // ✅ Riassegna la funzione startGame al click
+		startButton.disabled = false
     }
 
     gameDiv.innerHTML = '';
