@@ -167,10 +167,12 @@ function showExplanation(explanation, index) {
     explanationBanner.style.display = 'block';
     overlay.style.display = 'block';
     
-    // ✅ Abilita il pulsante "Continua" quando compare la spiegazione
+    // ✅ Abilita il pulsante "Continua" e "Ricominicia" quando compare la spiegazione
     const continueButton = document.getElementById('continue-button');
+	const restartButton = document.getElementById('restart-button');
     if (continueButton) {
         continueButton.disabled = false; // Rimuove l'attributo "disabled"
+		restartButton.disabled = false;
     }
 }
 
