@@ -3,7 +3,7 @@
 // 1. Game Questions
 const questions = [
     {
-        question: "Tutti conosciamo la famosa ape da miele (Apis mellifera). Ma quante specie di api ci sono in Italia secondo te?",
+        question: "Tutti conosciamo la famosa ape da miele. Ma quante specie di api ci sono in Italia secondo te?",
         options: [
             { text: "Circa 50", correct: false },
             { text: "Circa 250", correct: false },
@@ -43,7 +43,7 @@ const questions = [
         image: "images/monarca.png"
     },
     {
-        question: "Quale di questi alimenti non sarebbe più disponibile se gli impollinatori sparissero?",
+        question: "Quale di questi alimenti rischiamo di perdere se gli impollinatori dovessero sparire?",
         options: [
             { text: "Caffè", correct: true },
             { text: "Grano", correct: false },
@@ -53,7 +53,7 @@ const questions = [
         image: "images/frutta.png"
     },
     {
-        question: "Bene! Adesso è ora di agire! Gli impollinatori stanno morendo di caldo in città, devi trovare una soluzione..",
+        question: "Bene! Adesso è ora di agire! Gli impollinatori stanno morendo di caldo in città, devi trovare una soluzione:",
         options: [
             { text: "Creare più zone alberate", correct: true },
             { text: "Irrigare frequentemente i giardini e aree verdi", correct: false },
@@ -73,7 +73,7 @@ const questions = [
         image: "images/balcone.png"
     },
     {
-        question: "Alcuni impollinatori hanno iniziato ad apprezzare i cambiamenti, come potresti renderla la tua città ancora più accogliente?",
+        question: "La situazione sembra migliorare ma come potremmo rendere le nostre città ancora più accoglienti?",
         options: [
             { text: "Rimuovendo i cumuli di foglie secche da terra", correct: false },
             { text: "Rimuovendo tronchi e ceppi di alberi da terra", correct: false },
