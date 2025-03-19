@@ -15,9 +15,9 @@ const questions = [
     {
         question: "Quale tra questi animali non è un impollinatore?",
         options: [
-            { text: "Farfalla Macaone", correct: false },
-            { text: "Pipistrello della Tequila", correct: false },
-            { text: "Tucano Tuco", correct: true }
+            { text: "Macaone (Farfalla)", correct: false },
+            { text: "Pipistrello della Tequila (Pipistrello)", correct: false },
+            { text: "Tucano Toco (Uccello)", correct: true }
         ],
         explanation: "Molti animali, anche insospettabili, impollinano: dalle farfalle ai pipistrelli. Ma il tucano tuco, pur diffondendo semi, non trasporta polline tra i fiori!",
         image: "images/butterfly.png"
@@ -27,7 +27,7 @@ const questions = [
         options: [
             { text: "Nel deserto", correct: false },
             { text: "Nello spazio", correct: false },
-            { text: "Sulla cima dell'Everest", correct: true }
+            { text: "In cima all'Everest", correct: true }
         ],
         explanation: "Gli impollinatori vivono ovunque, persino nei deserti, ma non in cima all’Everest. Sorprendentemente, alcune api sono state persino portate nello spazio per esperimenti della NASA!",
         image: "images/space.png"
