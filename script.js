@@ -9,7 +9,7 @@ const questions = [
             { text: "Circa 250", correct: false },
             { text: "Più di 1000", correct: true }
         ],
-        explanation: "In Italia vivono oltre 1.000 specie di api selvatiche, molte delle quali sono fondamentali per l'impollinazione delle piante. Sebbene l’ape da miele (Apis mellifera) sia la più conosciuta, esiste una straordinaria varietà di api solitarie, come le api muratrici (Osmia), le api tagliafoglie (Megachile) e le api delle miniere (Andrena), tutte con ruoli unici negli ecosistemi.",
+        explanation: "Incredibile, ma vero: in Italia esistono oltre 1.000 specie di api! Ognuna con le sue caratteristiche e tutte importanti per l’impollinazione di piante spontanee e coltivate.",
         image: "images/bee.png"
     },
     {
@@ -19,7 +19,7 @@ const questions = [
             { text: "Pipistrello della Tequila", correct: false },
             { text: "Tucano Tuco", correct: true }
         ],
-        explanation: "Molti animali contribuiscono all'impollinazione, non solo insetti come api e farfalle. Ad esempio, la farfalla Macaone (Papilio machaon) svolge un ruolo importante trasportando il polline mentre si nutre del nettare dei fiori. Allo stesso modo, il pipistrello della Tequila (Leptonycteris yerbabuenae) è un impollinatore essenziale per piante come l’agave, da cui si ricava la tequila. Al contrario, il tucano Tuco (Ramphastos toco) non è un impollinatore. Questo uccello dai colori vivaci si nutre principalmente di frutta, semi e piccoli animali, contribuendo alla dispersione dei semi, ma non al trasferimento del polline.",
+        explanation: "Molti animali, anche insospettabili, impollinano: dalle farfalle ai pipistrelli. Ma il tucano tuco, pur diffondendo semi, non trasporta polline tra i fiori!",
         image: "images/butterfly.png"
     },
     {
@@ -29,7 +29,7 @@ const questions = [
             { text: "Nello spazio", correct: false },
             { text: "Sulla cima dell'Everest", correct: true }
         ],
-        explanation: "Gli impollinatori sono presenti in quasi tutti gli ecosistemi del pianeta, adattandosi a condizioni estreme come il caldo torrido dei deserti o le temperature rigide delle regioni polari. Tuttavia, non sono mai stati osservati sulla cima dell’Everest, a circa 8.849 metri di altitudine. Nello spazio invece sono stati trasportati direttamente sulla Stazione Spaziale Internazionale per alcuni esperimenti.",
+        explanation: "Gli impollinatori vivono ovunque, persino nei deserti, ma non in cima all’Everest. Sorprendentemente, alcune api sono state persino portate nello spazio per esperimenti della NASA!",
         image: "images/space.png"
     },
     {
@@ -39,7 +39,7 @@ const questions = [
             { text: "1000 km", correct: false },
             { text: "4500 km", correct: true }
         ],
-        explanation: "La farfalla monarca (Danaus plexippus) è famosa per le sue straordinarie migrazioni, che possono coprire fino a 4.500 chilometri. Ogni anno, milioni di esemplari viaggiano dal Canada e dagli Stati Uniti fino alle foreste montuose del Messico, dove trascorrono l’inverno. Questo fenomeno unico non solo dimostra l’impressionante resistenza e capacità di orientamento di questi insetti, ma sottolinea anche l’importanza della conservazione degli habitat lungo le rotte migratorie.",
+        explanation: "La farfalla monarca è una campionessa di migrazione: può percorrere fino a 4.500 km! Ogni anno viaggia dal Nord America fino al Messico per svernare, attraversando interi continenti.",
         image: "images/monarca.png"
     },
     {
@@ -47,9 +47,9 @@ const questions = [
         options: [
             { text: "Caffè", correct: true },
             { text: "Grano", correct: false },
-            { text: "Segale", correct: false }
+            { text: "Patate", correct: false }
         ],
-        explanation: "Se gli impollinatori sparissero, il grano continuerebbe a essere disponibile, perché si tratta di una pianta che si riproduce tramite impollinazione anemofila (cioè attraverso il vento) e non dipende dagli insetti. Tuttavia, altre colture essenziali come il caffè subirebbero un drammatico declino. L'assenza di impollinatori, porterebbe ad un crollo della produzione agricola, causando non solo una carenza di cibo, ma anche gravi squilibri negli ecosistemi e nell'economia globale.",
+        explanation: "Senza impollinatori, perderemmo il caffè, che dipende completamente dall'impollinazione. Il grano si impollina grazie al vento, mentre le patate si riproducono principalmente tramite i tuberi.",
         image: "images/frutta.png"
     },
     {
@@ -59,7 +59,7 @@ const questions = [
             { text: "Irrigare frequentemente i giardini e aree verdi", correct: false },
             { text: "Spruzzare acqua nebulizzata nelle strade per rinfrescare l’ambiente", correct: false }
         ],
-        explanation: "La soluzione migliore per aiutare gli impollinatori a sopravvivere al caldo in città è creare più zone alberate. Le aree verdi forniscono ombra, abbassano la temperatura dell’ambiente circostante e creano microclimi più freschi e umidi, essenziali per insetti come api, farfalle e bombi. Inoltre, gli alberi e le piante non solo offrono rifugio e protezione dal sole, ma sono anche fonti di nettare e polline, fondamentali per l’alimentazione degli impollinatori.",
+        explanation: "La soluzione migliore è creare più zone alberate, che offrono ombra e habitat. Irrigare frequentemente i giardini e spruzzare acqua nebulizzata nelle strade non sono soluzioni efficaci e sostenibili per combattere il calore estremo.",
         image: "images/sole.png"
     },
     {
@@ -69,7 +69,7 @@ const questions = [
             { text: "Coltivando piante aromatiche sul balcone", correct: true },
             { text: "Aumentando l'illuminazione notturna per attirare più insetti", correct: false }
         ],
-        explanation: "La soluzione più efficace per aiutare gli impollinatori in città è coltivare piante aromatiche sul balcone. Piante come lavanda, rosmarino, timo, salvia e basilico non solo arricchiscono l’ambiente urbano con i loro profumi, ma forniscono anche nettare e polline, fondamentali per la sopravvivenza di api, farfalle e altri insetti impollinatori. Queste piante sono facili da coltivare, richiedono poca manutenzione e possono prosperare anche in spazi ridotti, rendendo ogni balcone o terrazzo un piccolo rifugio verde.",
+        explanation: "Una buona soluzione è coltivare piante aromatiche sul balcone, che offrono risorse alle impollinatori. Tagliare il prato ogni settimana non aiuta, mentre aumentare l'illuminazione notturna può disturbare gli insetti, attirando specie invasive e compromettendo la loro attività.",
         image: "images/balcone.png"
     },
     {
@@ -79,7 +79,7 @@ const questions = [
             { text: "Rimuovendo tronchi e ceppi di alberi da terra", correct: false },
             { text: "Sostituendo recinzioni metalliche con siepi", correct: true }
         ],
-        explanation: "La scelta migliore per rendere la città più accogliente per gli impollinatori è sostituire le recinzioni metalliche con siepi. Le siepi offrono numerosi vantaggi ecologici: forniscono rifugi sicuri, protezione dai predatori, luoghi per la nidificazione e fonti di cibo grazie ai fiori e alle bacche che producono. Specie vegetali come il biancospino, il ligustro, la rosa canina e il prugnolo sono particolarmente apprezzate dagli insetti impollinatori, oltre a supportare uccelli e piccoli mammiferi.",
+        explanation: "Per rendere le città più accoglienti, è utile sostituire recinzioni metalliche con siepi, che offrono rifugio e cibo agli impollinatori. Rimuovere cumuli di foglie e tronchi non è invece consigliato poiché forniscono habitat naturali per insetti e altri organismi.",
         image: "images/cappo.png"
     },
     {
@@ -89,17 +89,17 @@ const questions = [
             { text: "Suolo nudo", correct: false },
             { text: "Entrambe le risposte precedenti", correct: true }
         ],
-        explanation: "Sia i muretti a secco che il suolo nudo sono elementi fondamentali per la nidificazione degli impollinatori, in particolare delle api solitarie. I muretti a secco, realizzati senza malta, hanno fessure e interstizi ideali per ospitare insetti come api muratrici, vespe solitarie e altri impollinatori. Il suolo nudo, invece, è essenziale perché molte api solitarie nidificano scavando tunnel nel terreno. La presenza di suolo non coperto da erba o cemento permette loro di deporre le uova, mentre i terreni sabbiosi e ben drenati risultano particolarmente adatti.",
+        explanation: "Per favorire la nidificazione degli impollinatori, sono utili sia i muretti a secco che il suolo nudo, poiché entrambi offrono un elemento perfetto per la nidificazione di molte specie.",
         image: "images/casetta.png"
     },
     {
-        question: "Per pianificare al meglio la tua città a misura di impollinatore è meglio:",
+        question: "Ci siamo quasi! Quale strategia pensi sia meglio adottare per pianificare città a misura di impollinatore per il futuro?",
         options: [
             { text: "Creare tante aree verdi anche se piccole di dimensioni", correct: true },
             { text: "Piantare alberi sempreverdi per mantenere il verde tutto l'anno", correct: false },
            { text: "Importare fiori particolarmente ricchi di nettare da altri paesi", correct: false }
         ],
-        explanation: "Gli impollinatori, come api, farfalle e coleotteri, hanno bisogno di spazi naturali distribuiti su tutto il territorio per nutrirsi, riprodursi e spostarsi. Anche piccoli giardini, balconi fioriti, aiuole o tetti verdi possono diventare rifugi vitali, creando una rete ecologica che collega gli habitat urbani. Questo approccio è noto come corridoi ecologici e consente agli insetti di superare le barriere artificiali delle città, come strade e edifici.",
+        explanation: "Per una città a misura di impollinatori, è meglio creare tante aree verdi anche se piccole, che offrono risorse diverse durante tutto l'anno. I sempreverdi, pur mantenendo il verde, non forniscono molte risorse per gli impollinatori, mentre importare fiori da altri paesi potrebbe alterare l'ecosistema locale.",
        image: "images/mappa.png"
     }
     
